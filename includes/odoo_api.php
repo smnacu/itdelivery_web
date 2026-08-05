@@ -1,12 +1,12 @@
 <?php
 /**
- * ITDelivery — Odoo 19 Enterprise JSON-RPC Client
+ * ITDelivery — Odoo 19 Enterprise JSON-RPC Client & Catalog Helper
  */
 
 define('ODOO_URL',     getenv('ODOO_URL')     ?: 'https://itdelivery.odoo.com');
 define('ODOO_DB',      getenv('ODOO_DB')      ?: 'karioka-karioka-33462739');
 define('ODOO_UID',     (int)(getenv('ODOO_UID') ?: 5));
-define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: '');
+define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: 'd62315a2e15c6f5b560b3aeae3e2d9051993b8d1');
 
 const COMPANY = [
     'ITDelivery'        => 1,
@@ -75,4 +75,27 @@ function odoo(string $model, string $method, array $args = [], array $kwargs = [
     }
 
     return $res['result'];
+}
+
+/**
+ * Obtiene los productos/servicios activos del catálogo desde Odoo 19
+ */
+function odoo_get_catalog(int $company = 1, int $limit = 20): array
+{
+    try {
+        return odoo(
+            'product.template',
+            'search_read',
+            [[['sale_ok', '=', true]]],
+            [
+                'fields' => ['id', 'name', 'list_price', 'description_sale', 'categ_id'],
+                'limit'  => $limit,
+                'order'  => 'name asc'
+            ],
+            $company
+        );
+    } catch (Throwable $e) {
+        error_log("Error fetching Odoo catalog: " . $e->getMessage());
+        return [];
+    }
 }

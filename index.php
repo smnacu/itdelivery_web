@@ -9,7 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email'] ?? '');
     $telefono = trim($_POST['telefono'] ?? '');
     $empresa  = trim($_POST['empresa'] ?? '');
+    $servicio = trim($_POST['servicio_interes'] ?? '');
     $mensaje  = trim($_POST['mensaje'] ?? '');
+
+    $full_description = $mensaje;
+    if (!empty($servicio)) {
+        $full_description = "Servicio solicitado: " . $servicio . "\n\n" . $mensaje;
+    }
 
     if (!empty($nombre) && !empty($email)) {
         try {
@@ -17,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'crm.lead',
                 'create',
                 [[
-                    'name'         => 'Contacto Landing Web — ' . ($empresa ?: $nombre),
+                    'name'         => 'Consulta Web' . ($servicio ? " [$servicio]" : "") . ' — ' . ($empresa ?: $nombre),
                     'contact_name' => $nombre,
                     'email_from'   => $email,
                     'phone'        => $telefono,
                     'partner_name' => $empresa,
-                    'description'  => $mensaje,
+                    'description'  => $full_description,
                 ]],
                 [],
                 COMPANY['ITDelivery']
@@ -35,13 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_msg = "Por favor completá los campos obligatorios (Nombre y Email).";
     }
 }
+
+// Cargar catálogo en tiempo real desde Odoo 19
+$catalogo = odoo_get_catalog(COMPANY['ITDelivery'], 20);
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITDelivery — Soluciones Tecnológicas & Software</title>
+    <title>ITDelivery — Soluciones Tecnológicas & Catálogo Odoo</title>
     <meta name="description" content="Desarrollo de software a medida, integración de sistemas ERP Odoo y soluciones tecnológicas para empresas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,28 +102,120 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             gap: 0.5rem;
         }
         .logo span { color: var(--primary); }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-main); }
         .hero {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem 2rem 2rem;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.75rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(135deg, #ffffff 0%, #8b949e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+        .product-badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            background: var(--primary-glow);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+        .product-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .btn-order {
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-order:hover {
+            background: #1f6feb;
         }
         .contact-section {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 5rem auto;
             width: 100%;
             padding: 0 1.5rem;
@@ -126,11 +227,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 2.5rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
         .form-group {
             margin-bottom: 1.25rem;
         }
@@ -141,7 +237,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: var(--text-muted);
             margin-bottom: 0.35rem;
         }
-        input, textarea {
+        input, select, textarea {
             width: 100%;
             padding: 0.75rem 1rem;
             background: #161b22;
@@ -151,12 +247,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 1rem;
             font-family: inherit;
         }
-        input:focus, textarea:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px var(--primary-glow);
         }
-        button {
+        button[type="submit"] {
             width: 100%;
             padding: 0.85rem;
             background: var(--primary);
@@ -168,9 +264,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             cursor: pointer;
             transition: background-color 0.2s ease;
         }
-        button:hover {
-            background-color: #1f6feb;
-        }
+        button[type="submit"]:hover { background-color: #1f6feb; }
         .alert {
             padding: 1rem;
             border-radius: 6px;
@@ -193,22 +287,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <div class="nav-container">
             <a href="/" class="logo">IT<span>Delivery</span></a>
+            <div class="nav-links">
+                <a href="#catalogo">Catálogo</a>
+                <a href="#contacto">Contacto</a>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Soluciones Tecnológicas & Integración ERP</h1>
-            <p>Impulsamos tu negocio con desarrollo a medida e integraciones nativas en Odoo Enterprise.</p>
+            <h1>Catálogo de Servicios & Integración Odoo</h1>
+            <p>Explorá nuestras ofertas y contratá soluciones directamente sincronizadas con nuestro ERP.</p>
         </section>
 
-        <section class="contact-section">
+        <!-- Seccion Catalogo -->
+        <section id="catalogo" class="catalog-container">
+            <h2 class="section-title">Catálogo Sincronizado desde Odoo 19</h2>
+
+            <?php if (empty($catalogo)): ?>
+                <p style="text-align:center; color:var(--text-muted);">No se pudieron cargar productos del catálogo en este momento.</p>
+            <?php else: ?>
+                <div class="grid">
+                    <?php foreach ($catalogo as $prod): ?>
+                        <div class="product-card">
+                            <div>
+                                <span class="product-badge">
+                                    <?= htmlspecialchars($prod['categ_id'][1] ?? 'Servicios') ?>
+                                </span>
+                                <h3 class="product-title"><?= htmlspecialchars($prod['name']) ?></h3>
+                                <p class="product-desc">
+                                    <?= htmlspecialchars(trim($prod['description_sale'] ?? 'Solución tecnológica profesional con integración directa.')) ?>
+                                </p>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">
+                                    $<?= number_format($prod['list_price'], 2, ',', '.') ?>
+                                </span>
+                                <button type="button" class="btn-order" onclick="solicitarServicio('<?= htmlspecialchars(addslashes($prod['name'])) ?>')">
+                                    Solicitar
+                                </button>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </section>
+
+        <!-- Seccion Contacto / Solicitar -->
+        <section id="contacto" class="contact-section">
             <div class="card">
-                <h2>Contactanos</h2>
+                <h2 style="text-align:center; margin-bottom:1.5rem;">Formulario de Solicitud</h2>
 
                 <?php if ($message_sent): ?>
                     <div class="alert alert-success">
-                        ¡Gracias por contactarnos! Tu mensaje fue registrado correctamente en nuestro sistema y nos comunicaremos a la brevedad.
+                        ¡Consulta recibida! Se ha generado la oportunidad en Odoo CRM y nos comunicaremos con vos a la brevedad.
                     </div>
                 <?php endif; ?>
 
@@ -218,7 +350,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 <?php endif; ?>
 
-                <form action="index.php" method="POST">
+                <form action="index.php#contacto" method="POST">
+                    <div class="form-group">
+                        <label for="servicio_interes">Servicio de Interés</label>
+                        <input type="text" id="servicio_interes" name="servicio_interes" placeholder="Seleccioná un servicio o escribí tu consulta">
+                    </div>
                     <div class="form-group">
                         <label for="nombre">Nombre Completo *</label>
                         <input type="text" id="nombre" name="nombre" required>
@@ -236,17 +372,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" id="empresa" name="empresa">
                     </div>
                     <div class="form-group">
-                        <label for="mensaje">Mensaje / Consulta</label>
+                        <label for="mensaje">Mensaje / Detalle de la Solicitud</label>
                         <textarea id="mensaje" name="mensaje" rows="4"></textarea>
                     </div>
-                    <button type="submit">Enviar Consulta</button>
+                    <button type="submit">Enviar Oportunidad a Odoo</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <?= date('Y') ?> ITDelivery. Todos los derechos reservados.</p>
+        <p>&copy; <?= date('Y') ?> ITDelivery. Catálogo conectado a Odoo 19 Enterprise.</p>
     </footer>
+
+    <script>
+        function solicitarServicio(nombreServicio) {
+            document.getElementById('servicio_interes').value = nombreServicio;
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
