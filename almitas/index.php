@@ -6,8 +6,8 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almitas Peludas — Peluquería Canina & Pedidos Mayoristas Morquis</title>
-    <meta name="description" content="Peluquería & Estética Canina a Domicilio. Pedido mayorista directo de fábrica Morquis para alimentos (CatPro, Pro Plan, Royal Canin, Fawna, Eukanuba), piedritas sanitarias Rubicat y accesorios.">
+    <title>Almitas Peludas - Peluqueria Canina a Domicilio y Pedidos Mayoristas Morquis</title>
+    <meta name="description" content="Peluqueria y Estetica Canina a Domicilio. Pedidos mayoristas de alimentos (CatPro, Pro Plan, Royal Canin, Fawna, Eukanuba), piedritas sanitarias Rubicat y accesorios.">
     <meta name="theme-color" content="#0f172a">
     
     <!-- Google Fonts -->
@@ -20,7 +20,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             --bg: #0f172a;
             --bg-alt: #1e293b;
             --card-bg: rgba(30, 41, 59, 0.85);
-            --card-border: rgba(251, 191, 36, 0.2);
+            --card-border: rgba(251, 191, 36, 0.25);
             --border-muted: rgba(255, 255, 255, 0.1);
             
             --gold: #fbbf24;
@@ -71,7 +71,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             top: 0;
             z-index: 100;
             backdrop-filter: blur(16px);
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.92);
             border-bottom: 1px solid var(--border-muted);
         }
 
@@ -91,22 +91,25 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             text-decoration: none;
         }
 
-        .brand-icon {
-            font-size: 1.8rem;
-            filter: drop-shadow(0 0 10px var(--gold-glow));
+        .brand-badge {
+            background: var(--gold);
+            color: #0f172a;
+            font-weight: 900;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
         }
 
         .brand-name {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--text);
             letter-spacing: -0.02em;
         }
 
-        .brand-name span {
-            color: var(--gold);
-        }
+        .brand-name span { color: var(--gold); }
 
         nav {
             display: flex;
@@ -117,14 +120,12 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 500;
             transition: var(--transition);
         }
 
-        nav a:hover {
-            color: var(--gold);
-        }
+        nav a:hover { color: var(--gold); }
 
         .nav-btn {
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
@@ -146,10 +147,10 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem 5rem 1.5rem;
+            padding: 2rem 1.5rem 5rem 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         /* Hero Banner */
@@ -167,26 +168,26 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: rgba(251, 191, 36, 0.1);
             border: 1px solid rgba(251, 191, 36, 0.3);
             color: var(--gold);
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .hero h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 1rem;
+            line-height: 1.2;
+            margin-bottom: 0.85rem;
             background: linear-gradient(135deg, #ffffff 30%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 680px;
             margin: 0 auto;
@@ -196,9 +197,9 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         .goal-card {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
             border: 1px solid var(--gold);
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.15);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.12);
             border-radius: var(--radius-lg);
-            padding: 2rem;
+            padding: 1.75rem;
             position: relative;
             overflow: hidden;
         }
@@ -217,10 +218,10 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: rgba(251, 191, 36, 0.1);
             border: 1px dashed rgba(251, 191, 36, 0.4);
             border-radius: var(--radius-md);
-            padding: 0.85rem 1.25rem;
-            margin-bottom: 1.5rem;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 1.25rem;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .timer-info {
@@ -229,16 +230,16 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             gap: 0.75rem;
             font-weight: 600;
             color: var(--gold);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .timer-badge {
             background: var(--gold);
             color: #0f172a;
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.65rem;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .goal-header {
@@ -252,23 +253,21 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         .goal-title h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: var(--text);
         }
 
         .goal-title p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
         }
 
-        .goal-stats {
-            text-align: right;
-        }
+        .goal-stats { text-align: right; }
 
         .goal-amount {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--gold);
         }
@@ -323,21 +322,23 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid var(--emerald);
             color: #34d399;
-            padding: 0.35rem 0.85rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         /* Grid Layout */
         .main-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 2.5rem;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2rem;
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 880px) {
             .main-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
+            .hero h1 { font-size: 2rem; }
         }
 
         /* Card Panels */
@@ -345,7 +346,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: var(--card-bg);
             border: 1px solid var(--border-muted);
             border-radius: var(--radius-lg);
-            padding: 2rem;
+            padding: 1.75rem;
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
@@ -353,40 +354,38 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         .panel-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+            color: var(--text);
         }
 
         .panel-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         /* Search & Filters */
         .search-box {
             position: relative;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .search-box input {
-            padding-left: 2.75rem;
-            font-size: 1rem;
+            padding-left: 2.5rem;
+            font-size: 0.95rem;
             background: #0f172a;
             border: 1px solid var(--card-border);
         }
 
         .search-icon {
             position: absolute;
-            left: 1rem;
+            left: 0.9rem;
             top: 50%;
             transform: translateY(-50%);
             color: var(--gold);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             pointer-events: none;
         }
 
@@ -402,9 +401,9 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--border-muted);
             color: var(--text-muted);
-            padding: 0.4rem 0.9rem;
+            padding: 0.35rem 0.85rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -419,24 +418,24 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         /* Products List Scroll */
         .products-scroll {
-            max-height: 420px;
+            max-height: 400px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.65rem;
             padding-right: 0.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .product-item {
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid var(--border-muted);
             border-radius: var(--radius-md);
-            padding: 0.85rem 1.1rem;
+            padding: 0.8rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             transition: var(--transition);
         }
 
@@ -447,7 +446,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         .product-info h4 {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--text);
             line-height: 1.3;
@@ -461,7 +460,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         .product-price {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--gold);
             white-space: nowrap;
         }
@@ -469,11 +468,11 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         .qty-controls {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
             background: rgba(15, 23, 42, 0.9);
             border: 1px solid var(--border-muted);
             border-radius: 8px;
-            padding: 0.15rem 0.4rem;
+            padding: 0.15rem 0.35rem;
         }
 
         .qty-btn {
@@ -481,7 +480,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             border: none;
             color: var(--gold);
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             cursor: pointer;
             width: 26px;
             height: 26px;
@@ -496,25 +495,43 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         .qty-val {
             font-weight: 700;
-            font-size: 0.9rem;
-            width: 20px;
+            font-size: 0.88rem;
+            width: 18px;
             text-align: center;
         }
 
-        /* Cart Summary */
+        /* Cart Summary & Account Breakdown */
         .cart-summary {
             background: rgba(15, 23, 42, 0.95);
             border: 1px solid var(--card-border);
             border-radius: var(--radius-md);
-            padding: 1.2rem;
+            padding: 1.25rem;
             margin-top: auto;
+        }
+
+        .cart-items-breakdown {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-muted);
+            padding-bottom: 0.75rem;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .cart-line-item {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
         }
 
         .cart-total-row {
             display: flex;
             justify-content: space-between;
             font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--text);
             margin-bottom: 1rem;
@@ -523,12 +540,12 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         .cart-total-row span:last-child { color: var(--gold); }
 
         /* Form Controls */
-        .form-group { margin-bottom: 1.1rem; }
+        .form-group { margin-bottom: 1rem; }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
         @media (max-width: 600px) {
@@ -537,20 +554,20 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: var(--text-secondary);
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.3rem;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.7rem 0.9rem;
             background: #0f172a;
             border: 1px solid var(--border-muted);
             border-radius: 8px;
             color: var(--text);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-family: inherit;
             transition: var(--transition);
         }
@@ -563,12 +580,12 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         .btn-primary {
             width: 100%;
-            padding: 0.95rem;
+            padding: 0.9rem;
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
             color: #0f172a;
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -598,14 +615,14 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: var(--card-bg);
             border: 1px solid var(--border-muted);
             border-radius: var(--radius-lg);
-            padding: 2rem;
+            padding: 1.75rem;
             box-shadow: var(--shadow);
         }
 
         .copy-tabs {
             display: flex;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             border-bottom: 1px solid var(--border-muted);
             padding-bottom: 0.75rem;
             overflow-x: auto;
@@ -617,8 +634,8 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             color: var(--text-muted);
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
@@ -635,25 +652,25 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             background: #0f172a;
             border: 1px solid var(--border-muted);
             border-radius: var(--radius-md);
-            padding: 1.5rem;
-            font-family: monospace, monospace;
-            font-size: 0.9rem;
+            padding: 1.25rem;
+            font-family: monospace;
+            font-size: 0.88rem;
             color: var(--text-secondary);
             white-space: pre-wrap;
             position: relative;
             margin-bottom: 1rem;
-            max-height: 280px;
+            max-height: 260px;
             overflow-y: auto;
         }
 
         .btn-copy {
             align-self: flex-start;
-            padding: 0.5rem 1.25rem;
+            padding: 0.45rem 1.1rem;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid var(--border-muted);
             color: var(--text);
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -675,7 +692,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             right: 2rem;
             background: #10b981;
             color: #ffffff;
-            padding: 1rem 1.5rem;
+            padding: 0.9rem 1.4rem;
             border-radius: var(--radius-md);
             font-weight: 600;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -693,10 +710,10 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         footer {
             border-top: 1px solid var(--border-muted);
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
     </style>
 </head>
@@ -707,13 +724,13 @@ require_once __DIR__ . '/../includes/odoo_api.php';
     <header>
         <div class="header-inner">
             <a href="/almitas" class="brand">
-                <span class="brand-icon">🐾</span>
+                <span class="brand-badge">ALMITAS</span>
                 <span class="brand-name">Almitas <span>Peludas</span></span>
             </a>
             <nav>
-                <a href="#pedido-mayorista">📦 Pedido Mayorista</a>
-                <a href="#turnera">✂️ Turnera</a>
-                <a href="#copys">📲 Copys Difusión</a>
+                <a href="#pedido-mayorista">Pedido Mayorista</a>
+                <a href="#turnera">Turnera Domicilio</a>
+                <a href="#copys">Copys Difusion</a>
                 <a href="#turnera" class="nav-btn">Reservar Turno</a>
             </nav>
         </div>
@@ -722,9 +739,9 @@ require_once __DIR__ . '/../includes/odoo_api.php';
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-badge">✨ Peluquería Canina a Domicilio & Catálogo Mayorista Morquis</div>
+            <div class="hero-badge">Peluqueria Canina a Domicilio y Catalogo Mayorista Morquis</div>
             <h1>Cuidado profesional para tu mascota y alimentos a precio mayorista</h1>
-            <p>Atención personalizada en tu hogar y compras grupales directo de distribuidora Morquis.</p>
+            <p>Atencion personalizada en tu hogar y compras grupales directo de distribuidora Morquis.</p>
         </section>
 
         <!-- Wholesaler Progress & Cutoff Timer Banner -->
@@ -732,18 +749,18 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             
             <div class="timer-strip">
                 <div class="timer-info">
-                    <span>⏰ Próximo cierre de pedido Morquis:</span>
+                    <span>Proximo cierre de pedido Morquis:</span>
                     <span class="timer-badge">Viernes a las 18:00 hs</span>
                 </div>
                 <div style="font-size:0.85rem; color: var(--text-secondary);">
-                    🚚 <strong>Entregas:</strong> Martes a Jueves a domicilio.
+                    Entregas: Martes a Jueves a domicilio.
                 </div>
             </div>
 
             <div class="goal-header">
                 <div class="goal-title">
-                    <h2>📦 Meta de Compra Mayorista (Morquis - Lista 5 AGO)</h2>
-                    <p>Mínimo de compra a costo exigido por proveedor: $150.000</p>
+                    <h2>Meta de Compra Mayorista (Morquis - Lista 5 AGO)</h2>
+                    <p>Minimo de compra a costo exigido por proveedor: $150.000</p>
                 </div>
                 <div class="goal-stats">
                     <div class="goal-amount" id="goal-current-text">$58.680</div>
@@ -757,8 +774,8 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             </div>
 
             <div class="goal-footer">
-                <div>Falta reunir: <strong style="color: var(--gold);" id="goal-remaining-text">$91.320</strong> en pedidos de clientes.</div>
-                <div class="remaining-badge">🎯 ¡Sumate al pedido para asegurar stock!</div>
+                <div>Falta reunir: <strong style="color: var(--gold);" id="goal-remaining-text">$91.320</strong> en pedidos adicionales.</div>
+                <div class="remaining-badge">Sumate al pedido para asegurar stock</div>
             </div>
         </section>
 
@@ -767,21 +784,21 @@ require_once __DIR__ . '/../includes/odoo_api.php';
             
             <!-- Panel 1: Catálogo Interactivo Morquis (600+ Artículos) -->
             <div class="panel-card">
-                <h3 class="panel-title">🛒 Catálogo Mayorista Morquis (600+ Productos)</h3>
-                <p class="panel-subtitle">Buscá por marca o producto (CatPro, Rubicat, Pro Plan, Royal Canin, Fawna, Eukanuba, etc.) y armá tu pedido.</p>
+                <h3 class="panel-title">Catalogo Mayorista Morquis (600+ Productos)</h3>
+                <p class="panel-subtitle">Busca por marca o producto (CatPro, Rubicat, Pro Plan, Royal Canin, Fawna, Eukanuba, etc.) y arma tu pedido.</p>
 
                 <!-- Search Input -->
                 <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Buscar alimento, marca o piedritas (ej: CatPro, Rubicat, Pro Plan)..." oninput="renderCatalog()">
+                    <span class="search-icon">[Search]</span>
+                    <input type="text" id="search-input" placeholder="Buscar alimento, marca o piedritas (ej: CatPro, Rubicat)..." oninput="renderCatalog()">
                 </div>
 
                 <!-- Category Filters -->
                 <div class="category-chips">
                     <div class="chip active" onclick="filterCategory('ALL', this)">Todos (618)</div>
-                    <div class="chip" onclick="filterCategory('Perros', this)">🐶 Perros</div>
-                    <div class="chip" onclick="filterCategory('Gatos', this)">🐱 Gatos</div>
-                    <div class="chip" onclick="filterCategory('Piedritas & Higiene', this)">🍊 Piedritas & Higiene</div>
+                    <div class="chip" onclick="filterCategory('Perros', this)">Perros</div>
+                    <div class="chip" onclick="filterCategory('Gatos', this)">Gatos</div>
+                    <div class="chip" onclick="filterCategory('Piedritas & Higiene', this)">Piedritas & Higiene</div>
                 </div>
 
                 <!-- Products Scroll Box -->
@@ -789,8 +806,12 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                     <!-- Dynamic rendering via JS -->
                 </div>
 
-                <!-- Cart Summary -->
+                <!-- Cart Summary & Account Breakdown -->
                 <div class="cart-summary">
+                    <div class="cart-items-breakdown" id="cart-breakdown">
+                        <div style="color: var(--text-muted); font-style: italic;">Sin productos seleccionados en el carrito.</div>
+                    </div>
+
                     <div class="cart-total-row">
                         <span>Total de tu pedido:</span>
                         <span id="cart-total-price">$0</span>
@@ -800,31 +821,31 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                         <input type="text" id="order-name" placeholder="Tu Nombre Completo *">
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="order-phone" placeholder="Teléfono / WhatsApp *">
+                        <input type="tel" id="order-phone" placeholder="Telefono / WhatsApp *">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="order-address" placeholder="Dirección de entrega *">
+                        <input type="text" id="order-address" placeholder="Direccion de entrega *">
                     </div>
 
                     <button class="btn-primary btn-whatsapp" onclick="submitWholesaleOrder()">
-                        📲 Confirmar & Enviar por WhatsApp
+                        Enviar Pedido por WhatsApp
                     </button>
                 </div>
             </div>
 
             <!-- Panel 2: Turnera Peluquería Canina a Domicilio -->
             <div class="panel-card" id="turnera">
-                <h3 class="panel-title">✂️ Turnera Peluquería a Domicilio</h3>
-                <p class="panel-subtitle">Agendá una visita de baño y corte para tu perro directamente en tu casa.</p>
+                <h3 class="panel-title">Turnera Peluqueria a Domicilio</h3>
+                <p class="panel-subtitle">Agenda una visita de bano y corte para tu perro directamente en tu casa.</p>
 
                 <form id="appointment-form" onsubmit="submitAppointment(event)">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="dueno_nombre">Nombre del Dueño/a *</label>
+                            <label for="dueno_nombre">Nombre del Dueno/a *</label>
                             <input type="text" id="dueno_nombre" required placeholder="Ej: Santiago">
                         </div>
                         <div class="form-group">
-                            <label for="telefono">WhatsApp / Teléfono *</label>
+                            <label for="telefono">WhatsApp / Telefono *</label>
                             <input type="tel" id="telefono" required placeholder="Ej: 11 1234-5678">
                         </div>
                     </div>
@@ -835,14 +856,14 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                             <input type="text" id="mascota_nombre" required placeholder="Ej: Firulais">
                         </div>
                         <div class="form-group">
-                            <label for="mascota_raza">Raza / Tamaño</label>
+                            <label for="mascota_raza">Raza / Tamano</label>
                             <input type="text" id="mascota_raza" placeholder="Ej: Caniche / Mediano">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="direccion">Dirección de Visita *</label>
+                            <label for="direccion">Direccion de Visita *</label>
                             <input type="text" id="direccion" required placeholder="Ej: Av. Corrientes 1234">
                         </div>
                         <div class="form-group">
@@ -854,9 +875,9 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                     <div class="form-group">
                         <label for="servicio">Servicio Requerido *</label>
                         <select id="servicio" required>
-                            <option value="Peluquería Canina Completa ($25.000)">Peluquería Canina Completa ($25.000)</option>
-                            <option value="Baño & Higiene Profunda ($18.000)">Baño & Higiene Profunda ($18.000)</option>
-                            <option value="Corte de Uñas & Desparasitación ($10.000)">Corte de Uñas & Desparasitación ($10.000)</option>
+                            <option value="Peluqueria Canina Completa ($25.000)">Peluqueria Canina Completa ($25.000)</option>
+                            <option value="Bano & Higiene Profunda ($18.000)">Bano & Higiene Profunda ($18.000)</option>
+                            <option value="Corte de Unas & Desparasitacion ($10.000)">Corte de Unas & Desparasitacion ($10.000)</option>
                         </select>
                     </div>
 
@@ -868,7 +889,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                         <div class="form-group">
                             <label for="horario_turno">Franja Horaria *</label>
                             <select id="horario_turno" required>
-                                <option value="Mañana (09:00 - 13:00)">Mañana (09:00 - 13:00)</option>
+                                <option value="Manana (09:00 - 13:00)">Manana (09:00 - 13:00)</option>
                                 <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 17:00)</option>
                                 <option value="A confirmar por WhatsApp">A confirmar por WhatsApp</option>
                             </select>
@@ -881,70 +902,70 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                     </div>
 
                     <button type="submit" class="btn-primary" id="btn-submit-apt">
-                        📅 Reservar Turno en Odoo
+                        Reservar Turno en Odoo
                     </button>
                 </form>
             </div>
 
         </div>
 
-        <!-- Marketing & Copys Section -->
+        <!-- Marketing & Copys Section (Clean Text - No Emojis) -->
         <section id="copys" class="copy-section">
-            <h3 class="panel-title">📲 Centro de Difusión & Copys de Redes</h3>
-            <p class="panel-subtitle">Textos promocionales listos para publicar en Instagram, Facebook y enviar por grupos de WhatsApp.</p>
+            <h3 class="panel-title">Centro de Difusion y Copys de Redes</h3>
+            <p class="panel-subtitle">Textos promocionales limpios sin emojis listos para publicar en Instagram, Facebook y WhatsApp.</p>
 
             <div class="copy-tabs">
                 <button class="tab-btn active" onclick="showCopyTab('tab1')">Post Feed (IG/FB)</button>
                 <button class="tab-btn" onclick="showCopyTab('tab2')">Historias / Estados</button>
-                <button class="tab-btn" onclick="showCopyTab('tab3')">Mensaje Difusión WhatsApp</button>
+                <button class="tab-btn" onclick="showCopyTab('tab3')">Mensaje Difusion WhatsApp</button>
             </div>
 
             <div id="tab1" class="copy-tab-content">
-                <div class="copy-box" id="copy-text-1">¡Abrimos pedido de alimentos y sanitarios en Almitas Peludas! 🐾📦
+                <div class="copy-box" id="copy-text-1">!Abrimos pedido de alimentos y sanitarios en Almitas Peludas!
 
-Llegó el momento de reponer el alimento y las piedritas para tus peludos. Coordinamos pedido mayorista directo para ofrecerte los mejores precios y llevarlo a tu puerta.
+Llego el momento de reponer el alimento y las piedritas para tus peludos. Coordinamos pedido mayorista directo para ofrecerte los mejores precios y llevarlo a tu puerta.
 
-🌟 Destacados de esta semana:
-🐱 CatPro Gatos Indoor / Castrados (7.5 kg) – Nutrición balanceada y control de peso.
-🍊 Piedras Sanitarias Rubicat Premium (10 kg) – Aglomerante superior y máximo control de olores.
-🐶 Alimentos para perros y pipetas antipulgas (consultá por tu marca habitual).
+DESTACADOS DE ESTA SEMANA:
+- CatPro Gatos Indoor / Castrados (7.5 kg) - Nutricion balanceada y control de peso.
+- Piedras Sanitarias Rubicat Premium (10 kg) - Aglomerante superior y maximo control de olores.
+- Alimentos para perros y pipetas antipulgas (consulta por tu marca habitual).
 
-📲 ¿Cómo encargar?
-Escribinos por mensaje directo o WhatsApp indicando qué alimento o producto necesitás.
-⏰ Tomamos pedidos hasta este Viernes a las 18 hs para entregar la próxima semana.
+COMO ENCARGAR:
+Escribinos por mensaje directo o WhatsApp indicando que alimento o producto necesitas.
+Tomamos pedidos hasta este Viernes a las 18 hs para entregar la proxima semana.
 
-¡Sumate al pedido y asegurá el stock de tu mascota! ❤️</div>
-                <button class="btn-copy" onclick="copyText('copy-text-1')">📋 Copiar Post Feed</button>
+Sumate al pedido y me aseguras el stock de tu mascota.</div>
+                <button class="btn-copy" onclick="copyText('copy-text-1')">Copiar Post Feed</button>
             </div>
 
             <div id="tab2" class="copy-tab-content" style="display:none;">
-                <div class="copy-box" id="copy-text-2">🐾 ¡REPOSICIÓN DE STOCK EN ALMITAS PELUDAS! 📦
-¿Te estás quedando sin alimento o piedritas?
-Abrimos pedido de la semana. ¡Asegurá el tuyo antes de que cerremos la compra el Viernes a las 18 hs! 👇
+                <div class="copy-box" id="copy-text-2">REPOSICION DE STOCK EN ALMITAS PELUDAS
+Te estas quedando sin alimento o piedritas?
+Abrimos pedido de la semana. Asegura el tuyo antes de que cerremos la compra el Viernes a las 18 hs.
 
-🐱 OFERTA DESTACADA GATOS:
-• CatPro Castrados / Indoor 7.5 kg
-• Piedras Rubicat Premium 10 kg (Bolsa Naranja Aglomerante)
-📲 Mándanos un WhatsApp para reservar tu bolsa.</div>
-                <button class="btn-copy" onclick="copyText('copy-text-2')">📋 Copiar Texto Historias</button>
+OFERTA DESTACADA GATOS:
+- CatPro Castrados / Indoor 7.5 kg
+- Piedras Rubicat Premium 10 kg (Bolsa Naranja Aglomerante)
+Mandanos un WhatsApp para reservar tu bolsa.</div>
+                <button class="btn-copy" onclick="copyText('copy-text-2')">Copiar Texto Historias</button>
             </div>
 
             <div id="tab3" class="copy-tab-content" style="display:none;">
-                <div class="copy-box" id="copy-text-3">Hola! 👋 ¿Cómo estás? Te escribimos desde Almitas Peludas.
+                <div class="copy-box" id="copy-text-3">Hola! Como estas? Te escribimos desde Almitas Peludas.
 
-Estamos armando el pedido mayorista de alimentos y productos de higiene Morquis de esta semana. Si necesitás reponer alimento, piedritas sanitarias (como Rubicat) o antipulgas, avísanos antes del Viernes a las 18:00 hs y te lo sumamos al pedido con entrega directa.
+Estamos armando el pedido mayorista de alimentos y productos de higiene Morquis de esta semana. Si necesitas reponer alimento, piedritas sanitarias (como Rubicat) o antipulgas, avisanos antes del Viernes a las 18:00 hs y te lo sumamos al pedido con entrega directa.
 
-Decinos qué marca y presentación usás y te pasamos el precio actualizado. 🐾🛒</div>
-                <button class="btn-copy" onclick="copyText('copy-text-3')">📋 Copiar Mensaje Difusión</button>
+Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
+                <button class="btn-copy" onclick="copyText('copy-text-3')">Copiar Mensaje Difusion</button>
             </div>
         </section>
     </main>
 
     <!-- Toast Notification -->
-    <div id="toast" class="toast">¡Texto copiado al portapapeles!</div>
+    <div id="toast" class="toast">Texto copiado al portapapeles.</div>
 
     <footer>
-        <p>&copy; <?= date('Y') ?> Almitas Peludas — Peluquería Canina a Domicilio & Gestión ERP Odoo 19 Enterprise.</p>
+        <p>&copy; <?= date('Y') ?> Almitas Peludas - Peluqueria Canina a Domicilio y Gestion ERP Odoo 19 Enterprise.</p>
     </footer>
 
     <!-- Load Morquis Catalog JS -->
@@ -977,8 +998,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
                 );
             }
 
-            // Limit initial render to 40 items for performance
-            const displayItems = filtered.slice(0, 40);
+            const displayItems = filtered.slice(0, 45);
 
             if (displayItems.length === 0) {
                 container.innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--text-muted);">No se encontraron productos para "${search}".</div>`;
@@ -994,7 +1014,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
                     <div class="product-item">
                         <div class="product-info">
                             <h4>${item.name}</h4>
-                            <p>${item.brand ? 'Marca: ' + item.brand + ' • ' : ''}${item.category}</p>
+                            <p>${item.brand ? 'Marca: ' + item.brand + ' - ' : ''}${item.category}</p>
                         </div>
                         <div style="display:flex; align-items:center; gap:0.75rem;">
                             <div class="product-price">${formattedPrice}</div>
@@ -1017,11 +1037,30 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
 
         function calculateCartTotal() {
             let total = 0;
+            const breakdownEl = document.getElementById('cart-breakdown');
+            const lines = [];
+
             for (const idx in userCart) {
                 if (userCart[idx] > 0) {
-                    total += userCart[idx] * MORQUIS_CATALOG[idx].cost_price;
+                    const item = MORQUIS_CATALOG[idx];
+                    const subtotal = userCart[idx] * item.cost_price;
+                    total += subtotal;
+
+                    lines.push(`
+                        <div class="cart-line-item">
+                            <span>${userCart[idx]}x ${item.name}</span>
+                            <span>$${subtotal.toLocaleString('es-AR')}</span>
+                        </div>
+                    `);
                 }
             }
+
+            if (lines.length > 0) {
+                breakdownEl.innerHTML = lines.join('');
+            } else {
+                breakdownEl.innerHTML = '<div style="color: var(--text-muted); font-style: italic;">Sin productos seleccionados en el carrito.</div>';
+            }
+
             document.getElementById('cart-total-price').innerText = '$' + total.toLocaleString('es-AR');
             return total;
         }
@@ -1033,7 +1072,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
             const total = calculateCartTotal();
 
             if (!name || !phone) {
-                alert('Por favor ingresá tu nombre y teléfono.');
+                alert('Por favor ingresa tu nombre y telefono.');
                 return;
             }
 
@@ -1049,11 +1088,11 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
             }
 
             if (items.length === 0) {
-                alert('Seleccioná al menos 1 producto del catálogo.');
+                alert('Selecciona al menos 1 producto del catalogo.');
                 return;
             }
 
-            // 1. Registrar en Odoo vía API
+            // 1. Registrar en Odoo via API
             try {
                 await fetch('api.php', {
                     method: 'POST',
@@ -1071,17 +1110,17 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
                 console.warn('Error enviando a Odoo:', e);
             }
 
-            // 2. Enviar a WhatsApp
-            let text = `🐾 *NUEVO PEDIDO MAYORISTA — ALMITAS PELUDAS*\n`;
+            // 2. Enviar a WhatsApp (Clean text - NO Emojis)
+            let text = `NUEVO PEDIDO MAYORISTA - ALMITAS PELUDAS\n`;
             text += `------------------------------------\n`;
-            text += `*Cliente:* ${name}\n`;
-            text += `*Teléfono:* ${phone}\n`;
-            text += `*Dirección:* ${address || 'A confirmar'}\n\n`;
-            text += `*Productos:* \n`;
+            text += `Cliente: ${name}\n`;
+            text += `Telefono: ${phone}\n`;
+            text += `Direccion: ${address || 'A confirmar'}\n\n`;
+            text += `Productos:\n`;
             items.forEach(i => {
-                text += `• ${i.qty}x ${i.name} ($${(i.qty * i.price).toLocaleString('es-AR')})\n`;
+                text += `- ${i.qty}x ${i.name} ($${(i.qty * i.price).toLocaleString('es-AR')})\n`;
             });
-            text += `\n*TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}`;
+            text += `\nTOTAL ESTIMADO: $${total.toLocaleString('es-AR')}`;
 
             const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
             window.open(url, '_blank');
@@ -1116,7 +1155,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
                 const data = await res.json();
 
                 if (data.success) {
-                    showToast('¡Turno registrado en Odoo! Nos comunicaremos por WhatsApp.');
+                    showToast('Turno registrado en Odoo. Nos comunicaremos por WhatsApp.');
                     document.getElementById('appointment-form').reset();
                 } else {
                     alert(data.error || 'Error registrando turno.');
@@ -1125,7 +1164,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
                 alert('Error conectando con la API.');
             } finally {
                 btn.disabled = false;
-                btn.innerText = '📅 Reservar Turno en Odoo';
+                btn.innerText = 'Reservar Turno en Odoo';
             }
         }
 
@@ -1139,7 +1178,7 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
         function copyText(elementId) {
             const text = document.getElementById(elementId).innerText;
             navigator.clipboard.writeText(text).then(() => {
-                showToast('¡Texto copiado al portapapeles!');
+                showToast('Texto copiado al portapapeles.');
             });
         }
 
@@ -1150,7 +1189,6 @@ Decinos qué marca y presentación usás y te pasamos el precio actualizado. �
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // Initialize catalog render on page load
         document.addEventListener('DOMContentLoaded', renderCatalog);
     </script>
 </body>

@@ -34,13 +34,13 @@ if ($action === 'create_appointment') {
     $barrio_zona    = trim($data['barrio_zona'] ?? '');
     $mascota_nombre = trim($data['mascota_nombre'] ?? '');
     $mascota_raza   = trim($data['mascota_raza'] ?? '');
-    $servicio       = trim($data['servicio'] ?? 'Peluquería Canina Completa');
+    $servicio       = trim($data['servicio'] ?? 'Peluqueria Canina Completa');
     $fecha_turno    = trim($data['fecha_turno'] ?? '');
     $horario_turno  = trim($data['horario_turno'] ?? '');
     $notas          = trim($data['notas'] ?? '');
 
     if (empty($dueno_nombre) || empty($telefono) || empty($direccion) || empty($fecha_turno)) {
-        echo json_encode(['success' => false, 'error' => 'Por favor completá los campos obligatorios.']);
+        echo json_encode(['success' => false, 'error' => 'Por favor completa los campos obligatorios.']);
         exit;
     }
 
@@ -62,21 +62,21 @@ if ($action === 'create_appointment') {
             COMPANY['Almitas Peludas']
         );
 
-        // 2. Registrar Oportunidad / Turno CRM
-        $lead_desc = "🐾 TURNO PELUQUERÍA CANINA A DOMICILIO\n"
+        // 2. Registrar Oportunidad / Turno CRM (Texto limpio sin emojis)
+        $lead_desc = "TURNO PELUQUERIA CANINA A DOMICILIO\n"
                    . "----------------------------------------\n"
                    . "Cliente: $dueno_nombre ($telefono)\n"
                    . "Mascota: $mascota_nombre ($mascota_raza)\n"
                    . "Servicio: $servicio\n"
                    . "Fecha Solicitada: $fecha_turno ($horario_turno)\n"
-                   . "Dirección: $direccion, $barrio_zona\n"
+                   . "Direccion: $direccion, $barrio_zona\n"
                    . "Notas: $notas\n";
 
         $lead_id = odoo(
             'crm.lead',
             'create',
             [[
-                'name'         => "Turno Peluquería: $mascota_nombre — $fecha_turno ($horario_turno)",
+                'name'         => "Turno Peluqueria: $mascota_nombre - $fecha_turno ($horario_turno)",
                 'partner_id'   => $partner_id,
                 'contact_name' => $dueno_nombre,
                 'email_from'   => $email,
@@ -90,7 +90,7 @@ if ($action === 'create_appointment') {
 
         echo json_encode([
             'success'    => true,
-            'message'    => '¡Turno reservado con éxito! Nos comunicaremos con vos por WhatsApp para confirmar.',
+            'message'    => 'Turno reservado con exito. Nos comunicaremos por WhatsApp para confirmar.',
             'lead_id'    => $lead_id,
             'partner_id' => $partner_id
         ]);
@@ -128,21 +128,21 @@ if ($action === 'create_wholesale_order') {
             COMPANY['Almitas Peludas']
         );
 
-        // 2. Formatear resumen del pedido
+        // 2. Formatear resumen del pedido (Texto limpio sin emojis)
         $summary_lines = [];
         foreach ($items as $item) {
             $name  = $item['name'] ?? 'Producto';
             $qty   = (int)($item['qty'] ?? 1);
             $price = (float)($item['price'] ?? 0);
             $subtotal = $qty * $price;
-            $summary_lines[] = "• {$qty}x {$name} - $" . number_format($subtotal, 0, ',', '.');
+            $summary_lines[] = "- {$qty}x {$name} - $" . number_format($subtotal, 0, ',', '.');
         }
         $order_detail = implode("\n", $summary_lines);
 
-        $lead_desc = "📦 PEDIDO MAYORISTA ALMITAS PELUDAS\n"
+        $lead_desc = "PEDIDO MAYORISTA ALMITAS PELUDAS\n"
                    . "----------------------------------------\n"
                    . "Cliente: $dueno_nombre ($telefono)\n"
-                   . "Dirección: $direccion\n\n"
+                   . "Direccion: $direccion\n\n"
                    . "Productos:\n$order_detail\n\n"
                    . "TOTAL ESTIMADO: $" . number_format($total_amount, 0, ',', '.') . "\n"
                    . "Notas: $notas\n";
@@ -151,7 +151,7 @@ if ($action === 'create_wholesale_order') {
             'crm.lead',
             'create',
             [[
-                'name'         => "Pedido Mayorista: $dueno_nombre — $" . number_format($total_amount, 0, ',', '.'),
+                'name'         => "Pedido Mayorista: $dueno_nombre - $" . number_format($total_amount, 0, ',', '.'),
                 'partner_id'   => $partner_id,
                 'contact_name' => $dueno_nombre,
                 'phone'        => $telefono,
@@ -175,4 +175,4 @@ if ($action === 'create_wholesale_order') {
     exit;
 }
 
-echo json_encode(['success' => false, 'error' => 'Acción no válida.']);
+echo json_encode(['success' => false, 'error' => 'Accion no valida.']);
