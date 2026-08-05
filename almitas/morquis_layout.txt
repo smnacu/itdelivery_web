@@ -1,0 +1,709 @@
+             ALIMENTO PARA PERROS
+                        AGILITY                PRECIO
+AGILITY PERRO ADULTO X 20                       54,650
+                      DOG SELECTION            PRECIO
+DOG SELECTION ADULTO X 21                       39,750
+DOG SELECTION ADULTO PEQUEÑO X 15               29,900
+DOG SELECTION CACHORRO X 21                     43,900
+                           DOGUI               PRECIO
+DOGUI ADULTO X 21                               37,170
+DOGUI CACHORRO X 21                             40,490
+                        DOG CHOW               PRECIO
+DOG CHOW ADULTO MORDIDA CHICA X 8               23,930
+DOG CHOW ADULTO MORDIDA CHICA X 20              52,200
+DOG CHOW AD MORDIDA MEDIANA-GRANDE X 8          22,450
+DOG CHOW AD MORDIDA MEDIANA-GRANDE X 20         49,410
+DOG CHOW CACHORRO MORDIDA CHICA X 21            59,120
+DOG CHOW CACHORRO MORDIDA MED-GDE X 21          57,390
+DOG CHOW LONGEVIDAD SIN COL X 21                58,140
+                          DOG PRO              PRECIO
+DOG PRO PERRO ADULTO X 20                       51,840
+DOG PRO PERRO AD. SMALL X 15                    46,500
+DOG PRO PERRO CACHORRO MED x 15                 49,500
+DOG PRO PERRO DERMACARE X 3                     11,500
+                          ESTAMPA              PRECIO
+ESTAMPA TRADICIONAL X 20                        33,600
+                        EUKANUBA               PRECIO
+EUKANUBA ADULTO SMALL X 15                      69,900
+EUKANUBA ADULTO MEDIUM X 15                     67,850
+EUKANUBA ADULTO LARGE X 15                      67,600
+EUKANUBA ADULTO MEDIUM LIGHT X 15 (FIT BODY)    75,500
+EUKANUBA ADULTO LARGE LIGHT X 15 (FIT BODY)     76,200
+EUKANUBA PUPPY SMALL X 15                       71,820
+EUKANUBA PUPPY MEDIUM X 15                      68,150
+EUKANUBA PUPPY LARGE X 15                       68,150
+EUKANUBA SENIOR MEDIUM X 15                     73,300
+                        EXCELLENT                   PRECIO
+EXCELLENT PUPPY SMALL MORDIDA PEQ X 15               63,450
+EXCELLENT PUPPY RAZAS MED/GDE X 20                   75,400
+EXCELLENT ADULTO SMALL MORDIDA PEQ X 3               15,860
+EXCELLENT ADULTO SMALL MORDIDA PEQ X 15              58,375
+EXCELLENT POLLO Y ARROZ ADULTO X 3 MED/GDE           15,225
+EXCELLENT POLLO Y ARROZ ADULTO X 20 MED/GDE          66,500
+EXCELLENT SENIOR (+7 AÑOS) X 15                      61,630
+EXCELLENT BAJAS CALORÍAS (LIGHT) X 15                64,350
+EXCELLENT FORMULA CACHORRO X 20                      54,820
+EXCELLENT FORMULA ADULTO X 20                        50,400
+                          FAWNA                     PRECIO
+FAWNA PERRO AD SMALL X 3                             19,220
+FAWNA PERRO AD SMALL X 7.5                           40,100
+FAWNA PERRO AD MED/GDE X 3                           17,300
+FAWNA PERRO AD MED/GDE X 15                          70,350
+FAWNA PERRO AD LIGHT X 3                             21,850
+FAWNA PERRO AD LIGHT X 15                            64,080
+                         INFINITY                   PRECIO
+INFINITY ADULTO X 21                                 35,650
+INFINITY ADULTO MORDIDA PEQUEÑA X 15                 28,100
+                           LIVRA                    PRECIO
+LIVRA PERROS CACHORROS X 7.5 KG                      31,320
+LIVRA PERROS ADULTOS MINIS Y PEQUEÑOS X 3 KG         12,900
+LIVRA PERROS ADULTOS MINIS Y PEQUEÑOS X 7.5 KG       28,100
+LIVRA PERROS ADULTOS MINIS Y PEQUEÑOS X 15 KG        50,360
+LIVRA PERROS ADULTOS MEDIANO Y GDE X 15 KG           49,450
+LIVRA PERROS ADULTOS MINIS Y PEQ CORDERO X 7.5 KG    31,000
+LIVRA PERROS ADULTOS CORDERO X 3 KG                  13,950
+LIVRA PERROS ADULTOS CORDERO X 15 KG                 55,200
+                  MAINTENANCE CRIADORES             PRECIO
+MAINTENANCE CRIADORES X 22                           30,010
+MAINTENANCE RAZAS PEQUEÑAS X 15                      21,550
+MAINTENANCE CACHORRO CARNE Y POLL X 15               24,950
+MAINTENANCE HIGH PRO X 22                            38,020
+MAINTENANCE HIGH PRO X 22 CORDERO                    39,320
+                        NUTRIBON                    PRECIO
+NUTRIBON PERRO ADULTO X 20                           24,210
+NUTRIBON PERRO ADULTO MORDIDA PEQ X 20               31,510
+NUTRIBON CACHORRO X 15                               22,950
+                         OLD PRINCE                    PRECIO
+OLD PRINCE CORDERO Y ARROZ X 15                         57,000
+OLD PRINCE CORDERO Y ARROZ X 7,5                        31,300
+OLD PRINCE CORDERO Y ARROZ X 3                          14,200
+OLD PRINCE CORDERO Y ARROZ AD SMALL X 15                64,300
+OLD PRINCE CORDERO Y ARROZ AD SMALL X 7,5               34,610
+OLD PRINCE CORDERO Y ARROZ AD SMALL X 3                 15,520
+OLD PRINCE CORDERO Y ARROZ CACHORRO X 15                64,300
+OLD PRINCE CORDERO Y ARROZ CACHORRO X 7,5               34,610
+OLD PRINCE CORDERO Y ARROZ CACHORRO X 3                 15,520
+OLD PRINCE CORDERO Y ARROZ SENIOR X 15                  61,400
+OLD PRINCE CORDERO Y ARROZ SENIOR X 3                   14,950
+OLD PRINCE CORDERO Y ARROZ LIGHT X 15                   61,400
+OLD PRINCE CORDERO Y ARROZ AD LIGHT X 3                 14,950
+OLD PRINCE CERDO Y LEGUMBRES ADULTO X 3                 12,360
+OLD PRINCE CERDO Y LEGUMBRES ADULTO X 15                51,600
+OLD PRINCE EQUILIBRIUM AD POLL Y AR X 20                51,700
+OLD PRINCE EQUILIBRIUM AD POLL Y AR X 7.5               23,900
+OLD PRINCE EQUILIBRIUM AD SMALL POLL X 3                11,800
+OLD PRINCE EQUILIBRIUM AD SMALL POLL X 7.5              20,100
+OLD PRINCE EQUILIBRIUM AD SMALL POLL X 15               45,700
+OLD PRINCE EQUILIBRIUM CACH POLL-ARR X15                45,700
+OLD PRINCE EQUILIBR CACH SMALL POLL X 7,5               26,600
+OLD PRINCE EQUILIBR AD WEIGHT CONTROL X 15              54,100
+OLD PRINCE PREMIUM ADULTO CORDERO X 15                  50,510
+OLD PRINCE PREMIUM AD POLLO Y CARNE X 3                  7,710
+OLD PRINCE PREMIUM AD POLLO Y CARNE X 20                43,400
+OLD PRINCE PREMIUM CACHORRO X 15                        36,200
+                          PEDIGREE                     PRECIO
+PEDIGREE ADULTO CARNE-POLLO-CEREALES X 21               50,600
+PEDIGREE ADULTO CARNE-POLLO-VEGETALES X 21              50,600
+PEDIGREE ADULTO MORDIDA CHICA X 21                      51,000
+PEDIGREE CACHORRO X 21                                  53,550
+                          PRO PLAN                     PRECIO
+PRO PLAN PUPPY SMALL X 7,5                              64,600
+PRO PLAN PUPPY MEDIANO X 15                            101,850
+PRO PLAN PUPPY MEDIANO X 15                            104,500
+PRO PLAN ADULTO SMALL X 7,5                             59,600
+PRO PLAN ADULTO SMALL X 12+3                            82,100
+PRO PLAN ADULTO MEDIANO X 15                            92,350
+PRO PLAN ADULTO GRANDE X 15                             92,350
+PRO PLAN ACTIVE MIND SENIOR RZA PEQ X 3                 31,760
+PRO PLAN ACTIVE MIND SENIOR RZA PEQ X 7,5               64,600
+PRO PLAN ACTIVE MIND RZAS MED/GDE (+ 7 AÑOS) X 15 KG   102,800
+PRO PLAN REDUCED CALORIES (LIGHT) X 7.5 SMALL           69,020
+PRO PLAN REDUCED CALORIES (LIGHT) X 12 MED/GDE          85,300
+PRO PLAN SENSITIVE SKIN X 12 MED/GDE                    86,100
+                        PROVET               PRECIO
+PROVET CACHORRO X 15                          36,000
+                         RAZA                PRECIO
+RAZA ADULTO CARNE X 20                        29,890
+RAZA ADULTO MIXTO X 20                        29,890
+RAZA CACHORRO MIXTO X 15                      26,250
+                       ROYAL CANIN           PRECIO
+ROYAL CANIN MAXI ADULTO X 15                 107,150
+ROYAL CANIN MAXI PUPPY X 15                  116,750
+ROYAL CANIN MEDIUM ADULTO X 3                 30,050
+ROYAL CANIN MEDIUM ADULTO X 15               105,520
+ROYAL CANIN MEDIUM ADULTO 7+ X 3              34,220
+ROYAL CANIN MEDIUM PUPPY X 3                  34,670
+ROYAL CANIN MEDIUM PUPPY X 15                117,100
+ROYAL CANIN MINI ADULTO X 1                   11,900
+ROYAL CANIN MINI ADULTO X 3                   32,620
+ROYAL CANIN MINI ADULTO 8+ X 3                35,320
+ROYAL CANIN MINI AEGING 12+ X 3               35,320
+ROYAL CANIN MINI ADULTO X 7,5                 70,530
+ROYAL CANIN MINI ADULTO X 15                 116,720
+ROYAL CANIN MINI PUPPY X 3                    34,020
+ROYAL CANIN MINI PUPPY X 7,5                  66,800
+ROYAL CANIN MINI PUPPY X 15                  120,850
+ROYAL CANIN HEPATICO X 1.5                    20,100
+ROYAL CANIN HEPATICO X 10                    101,420
+ROYAL CANIN HIPOALERGENICO PERRO SMALL X 2    30,050
+ROYAL CANIN HIPOALERGENICO PERRO X 2          28,900
+ROYAL CANIN HIPOALERGENICO PERRO X 10        107,020
+ROYAL CANIN RENAL PERRO X 1.5                 18,040
+ROYAL CANIN RENAL PERRO X 10                  92,800
+ROYAL CANIN URINARY SO PERRO X 1.5            18,900
+ROYAL CANIN URINARY SO PERRO X 10             98,820
+ROYAL CANIN PERFORMANCE ADULTO X 20           81,330
+ROYAL CANIN PERFORMANCE PUPPY X 15            72,810
+ROYAL CANIN PERFORMANCE LIGHT X 15            67,290
+ROYAL CANIN SATIETY CANINE SMALL X 1.5        18,260
+ROYAL CANIN SATIETY CANINE X 1.5              18,150
+ROYAL CANIN SATIETY CANINE X 7.5              71,250
+ROYAL CANIN SATIETY CANINE X 15              128,275
+ROYAL CANIN GASTROINTESTINAL CANINE X 2       24,840
+ROYAL CANIN GASTROINTESTINAL CANINE X 10      87,810
+ROYAL CANIN CALM CANINE X 2                   27,980
+ROYAL CANIN CANICHE ADULTO X 3                36,400
+ROYAL CANIN CANICHE ADULTO X 7.5              76,250
+ROYAL CANIN MINI WEIGHT CARE X 1              13,880
+ROYAL CANIN MINI WEIGHT CARE X 3              36,180
+ROYAL CANIN DIABETIC CANINE X 2               28,900
+                          SIEGER                   PRECIO
+SIEGER CRIADORES ADULTO X 20                        76,680
+                      TOTAL BALANCE                PRECIO
+TOTAL BALANCE ADULTO X 20                           20,700
+                        VITAL CAN                  PRECIO
+VITAL CAN BELCAN ADULTO X 22                        26,100
+VITAL CAN BELCAN ADULTO X 24 SAFETY PACK            35,400
+VITAL CAN BALANCED ADULTO LARGE X 20                55,120
+VITAL CAN BALANCED ADULTO MEDIUM X 20               55,120
+VITAL CAN BALANCED ADULTO SMALL X 7,5               28,150
+VITAL CAN BALANCED ADULTO SMALL X 15                44,420
+VITAL CAN BALANCED PUPPY SMALL X 7,5                33,560
+VITAL CAN BALANCED CACHORRO LARGE X 20              67,950
+VITAL CAN BALANCED CACHORRO MEDIUM X 20             67,950
+VITAL CAN BALANCED CONTROL DE PESO X 20             69,200
+VITAL CAN BALANCED SENIOR SMALL X 7,5               32,600
+VITAL CAN BALANCE SENIOR MED X 12                   38,060
+VITAL CAN BALANCE SENIOR LARGE X 15                 48,445
+VITAL CAN BALANCED NATURAL RECIPE CERDO X 15        53,200
+VITAL CAN BALANCED NATURAL RECIPE CORDERO X 15      53,200
+VITAL CAN BALANCED NATURAL RECIPE CARNE ARG X 15    53,200
+VITAL CAN COMPLETE ADULTO X 20                      42,410
+VITAL CAN COMPLETE ADULTO SMALL X 20                41,550
+VITAL CAN COMPLETE CACHORRO X 20                    46,000
+VITAL CAN COMPLETE CONTROL DE PESO X 20             48,900
+VITAL CAN COMPLETE SENIOR X 20                      48,900
+VITAL CAN PREMIUM ADULTO X 20                       37,660
+VITAL CAN PREMIUM AD RAZA PEQUEÑA X 20              37,660
+VITAL CAN PREMIUM CACHORRO X 20                     43,670
+VITAL CAN PREMIUM CORDERO ADULTO X 20               44,405
+                          VORAZ                    PRECIO
+VORAZ CARNE X 22+3                                  26,850
+VORAZ CACHORRO X 20                                 31,830
+              ALIMENTO PARA GATOS
+                            AGILITY         PRECIO
+AGILITY GATO ADULTO X 10                     52,490
+AGILITY KITTEN X 10                          56,700
+AGILITY URINARY X 10                         56,700
+                           CAT CHOW         PRECIO
+CAT CHOW GATITOS X 15                        76,250
+CAT CHOW PESCADO X 8                         41,400
+CAT CHOW PESCADO X 15                        69,650
+CAT CHOW CARNE X 8                           41,400
+CAT CHOW CARNE X 15                          69,650
+CAT CHOW ESTERILIZADO X 15                   80,250
+                         CAT PRO            PRECIO
+CAT PRO GATO ADULTO X 7,5                    35,900
+CAT PRO GATO ADULTO X 15                     67,230
+CAT PRO KITTEN X 7,5                         37,640
+CAT PRO INDOOR X 7,5                         37,560
+CAT PRO INDOOR X 15                          70,310
+                     EUKANUBA CAT           PRECIO
+EUKANUBA HEALTH START KITTEN X 7.5 KG         59,060
+EUKANUBA CAT ADULT TOP CONDITION X 1.5 KG     13,825
+EUKANUBA CAT ADULT TOP CONDITION X 3 KG       25,550
+EUKANUBA CAT ADULT TOP CONDITION X 15 KG     102,300
+                       EXCELLENT            PRECIO
+EXCELLENT KITTEN (GATITOS) X 1                10,200
+EXCELLENT KITTEN (GATITOS) X 7,5              55,730
+EXCELLENT GATO ADULTO X 3                     23,500
+EXCELLENT GATO ADULTO X 7,5                   50,370
+EXCELLENT GATO ADULTO X 15                    96,690
+EXCELLENT URINARY X 7,5                       57,880
+EXCELLENT URINARY X 15                       111,700
+EXCELLENT CAT STERILIZED CHICKEN X 1          10,650
+EXCELLENT CAT STERILIZED CHICKEN X 7,5        57,800
+EXCELLENT MANTENIMIENTO GATO ADULTO X 15      71,320
+                           FAWNA            PRECIO
+FAWNA GATO KITTEN X 3                        27,530
+FAWNA GATO AD X 3                            25,960
+FAWNA GATO AD X 7.5                          50,900
+FAWNA GATO AD STERLIZED X 3                  29,500
+FAWNA GATO AD STERLIZED X 7.5                55,570
+FAWNA GATO URINARY X 3                       32,760
+FAWNA GATO URINARY X 7.5                     60,110
+                          GATI              PRECIO
+GATI CARNE Y POLLO X 15                      40,740
+GATI PESCADO Y SALMON X 15                   40,740
+                         INFINITY                 PRECIO
+INFINITY GATO X 10                                 25,700
+                          LIVRA                   PRECIO
+LIVRA GATO X 7.5                                   38,300
+                      MAINTENANCE                 PRECIO
+MAINTENANCE GATO SALMON Y ATUN X 15                32,350
+                     NUTRIBON                     PRECIO
+NUTRIBON GATO X 20                                 32,550
+                        OLD PRINCE                PRECIO
+OLD PRINCE EQUILIBRIUM GATO ADULTO X 7,5           39,500
+OLD PRINCE EQUILIBRIUM URINARY X 3                 20,360
+OLD PRINCE EQUILIBRIUM URINARY X 7,5               45,200
+OLD PRINCE EQUILIBRIUM STERILIZED X 7,5            43,450
+OLD PRINCE PREMIUM GATO ADULTO X 3                 15,200
+OLD PRINCE PREMIUM GATO ADULTO X 7,5               27,900
+OLD PRINCE PREMIUM CORDERO GATO ADULTO X 7,5       28,700
+OLD PRINCE PREMIUM KITTEN X 7,5                    31,750
+OLD PRINCE PREMIUM URINARY X 3                     14,610
+OLD PRINCE PREMIUM URINARY X 7,5                   28,100
+OLD PRINCE CORDERO Y ARROZ KITTEN X 3              26,310
+OLD PRINCE CORDERO Y ARROZ GATO AD X 3             23,400
+OLD PRINCE CORDERO Y ARROZ GATO AD X 7,5           50,400
+OLD PRINCE CORDERO Y ARROZ CAT STERILIZED x 3      25,630
+OLD PRINCE CORDERO Y ARROZ CAT STERILIZED x 7,5    57,370
+                        PRO PLAN                  PRECIO
+PRO PLAN KITTEN X 7,5                               86,750
+PRO PLAN GATO ADULTO X 7,5                          78,500
+PRO PLAN GATO ADULTO X 15                          138,660
+PRO PLAN URINARY X 7,5                              86,000
+PRO PLAN URINARY X 15                              147,300
+PRO PLAN GATO STERILIZED X 7,5                      91,300
+PRO PLAN OBESITY MANAGEMENT X 1,5                   23,130
+                           RAZA                   PRECIO
+RAZA GATO MIXTO (CARNE, PESC Y ARR) X 10           26,000
+RAZA GATO PESCADO X 10                             26,000
+RAZA GATO PESCADO X 15                             33,810
+RAZA GATO POLLO Y LECHE X 10                       26,000
+RAZA GATITOS X 8                                   23,800
+                       ROYAL CANIN                          PRECIO
+ROYAL CANIN PERFORMANCE GATO X 7,5                           55,660
+ROYAL CANIN PERFORMANCE KITTEN X 7,5                         59,500
+ROYAL CANIN FIT 32 X 1.5                                     23,660
+ROYAL CANIN FIT 32 X 3                                       39,590
+ROYAL CANIN FIT 32 X 7,5                                     93,000
+ROYAL CANIN FIT 32 X 15                                     151,550
+ROYAL CANIN GATOS CAST WEIGHT CONT X 1,5                     25,200
+ROYAL CANIN GATOS CAST WEIGHT CONT X 3                       48,280
+ROYAL CANIN GATOS CAST WEIGHT CONT X 7,5                     97,100
+ROYAL CANIN GATOS CAST WEIGHT CONT X 12                     130,150
+ROYAL CANIN KITTEN X 400g                                     9,750
+ROYAL CANIN KITTEN X 1.5                                     27,870
+ROYAL CANIN KITTEN X 7.5                                     93,450
+ROYAL CANIN URINARY CARE X 1,5                               28,300
+ROYAL CANIN URINARY CARE X 7,5                              108,860
+ROYAL CANIN URINARY S/O GATO X 1.5                           29,100
+ROYAL CANIN URINARY S/O GATO X 7.5                           98,100
+ROYAL CANIN CAT INDOOR 7+ X 1.5 KG                           27,400
+ROYAL CANIN CAT INDOOR X 1.5 KG                              25,900
+ROYAL CANIN CAT INDOOR X 7.5 KG                              93,100
+ROYAL CANIN CAT LIGHT WEIGHT CARE FELINE X 1.5 KG            27,550
+ROYAL CANIN CAT LIGHT WEIGHT CARE FELINE X 7.5 KG           101,100
+ROYAL CANIN CAT SENSIBLE X 400g                               8,650
+ROYAL CANIN CAT SENSIBLE X 1.5 KG                            25,850
+ROYAL CANIN CAT SENSIBLE X 7.5 KG                            94,050
+ROYAL CANIN CAT EARLY RENAL FELINE X 1.5 KG                  25,950
+ROYAL CANIN CAT GASTROINTESTINAL FELINE X 2 KG               36,720
+ROYAL CANIN CAT GASTROINTESTINAL FELINE FIBRE RESP X 2 KG    38,225
+ROYAL CANIN CAT GASTRO FELINE MODERATE CAL X 2 KG            38,000
+ROYAL CANIN SATIETY FELINE X 1.5 KG                          25,500
+ROYAL CANIN RENAL SUPPORT FELINE X 2 KG                      33,050
+ROYAL CANIN HEPATIC FELINE X 1.5 KG                          28,200
+ROYAL CANIN DIABETIC FELINE X 1.5 KG                         33,400
+ROYAL CANIN AGEING 11+ FELINE X 2 KG                         40,500
+ROYAL CANIN HYPOALLERGENIC FELINE X 2 KG                     43,200
+ROYAL CANIN CALM FELINE X 2 KG                               40,300
+ROYAL CANIN MOTHER & BABYCAT X 1.5 KG                        29,300
+ROYAL CANIN HAIR & SKIN X 2 KG                               37,750
+ROYAL CANIN DIGESTIVE X 2 KG                                 37,750
+ROYAL CANIN EXIGENT X 1.5 KG                                 26,000
+ROYAL CANIN HAIRBALL CARE X 1.5 KG                           27,670
+                         VITAL CAN                PRECIO
+VITAL CAT BALANCED CONTROL PH X 7,5                52,240
+VITAL CAT BALANCED GATO ADULTO X 7,5               43,280
+VITAL CAT BALANCED GATO ADULTO X 15                80,500
+VITAL CAT BALANCED GATO SENIOR X 7,5               47,950
+VITAL CAT BALANCED KITTEN X 7,5                    51,200
+VITAL CAT BALANCED CONTROL PESO X 7,5              51,680
+VITAL CAT BALANCED NAT RECIPE CORDERO PAT X 7,5    44,500
+VITAL CAT BALANCED NAT RECIPE SALMON X 7,5         44,500
+VITAL CAT BELCAT X 10                              21,070
+VITAL CAT BELCAT X 24 SAFETY PACK                  54,800
+VITAL CAT COMPLETE ADULTO X 7,5                    28,850
+VITAL CAT COMPLETE ADULTO X 15                     52,850
+VITAL CAT COMPLETE ADULTO X 24 SAFETY PACK         84,700
+VITAL CAT COMPLETE KITTEN X 7,5                    31,550
+VITAL CAT COMPLETE KITTEN 15                       54,100
+VITAL CAT COMPLETE URINARY X 7,5                   32,400
+VITAL CAT COMPLETE GATO CONTROL PESO 7,5           32,400
+VITAL CAT PREMIUM X 7,5                            28,200
+VITAL CAT PREMIUM X 20                             69,200
+VITAL CAT PREMIUM X 24 SAFETY PACK                 86,300
+VITAL CAT PREMIUM KITTEN X 7,5                     29,000
+VITAL CAT PREMIUM URINARY X 7,5                    31,300
+                            VORAZ                 PRECIO
+VORAZ GATO ADULTO X 20                             40,820
+                         WHISKAS                  PRECIO
+WHISKAS CARNE X 10                                 39,540
+WHISKAS CARNE X 20                                 66,740
+WHISKAS PESCADO X 10                               39,540
+WHISKAS PESCADO X 20                               66,740
+WHISKAS POLLO X 10                                 39,540
+WHISKAS GATITOS X 10                               39,000
+           SANITARIOS Y ACCESORIOS
+                      SANITARIOS                        PRECIO
+ABSORSOL 6 X 2 KG                                        10,300
+ABSORSOL VERDE 6 X 3,6 KG                                18,200
+ABSORSOL VERDE 8 KG                                       6,700
+ALTA GAMA NEGRA 6 X 3,6 KG                               21,310
+ALTA GAMA LAVANDA 6 X 3,6 KG                             25,300
+ALTA GAMA LIMÓN 6 X 3,6 KG                               25,300
+ALTA GAMA MAÑANAS DE CAMPO 6 X 3,6 KG                    25,300
+ALTA GAMA VAINILLA 6 X 3,6 KG                            25,300
+DIABSORB (PIEDRA A GRANEL) 25 KG (PROMO 5% X5)            9,000
+KON KATT 9.2 LTS (5 X 3.6KG) (PROMO 5% X5)                9,780
+KON KATT 23 LTS (9,8 KG) (PROMO 5% X5)                    4,300
+KON KATT 50 LTS (20 KG) (PROMO 5% X5)                     8,715
+KON KATT BENTONITA AGLOMERANTE X 12 KG                    7,800
+CAT WAY LAVANDA 9.2 LTS (5 X 3.6KG)                      13,800
+CAT WAY SILICA NEUTRA 3.8LTS (1.18 KG)                    9,500
+THE BEST 10 X 1,8 KG                                     13,250
+THE BEST 6 X 3,6 KG                                      14,880
+THE BEST 6 X 3,6 KG LAVANDA                              19,950
+MICHI FELIZ 6 X 1,8 KG                                    6,840
+POOPY PETS X 15 KG (5% DTO LLEVANDO 5 O MAS)             10,050
+POOPY PETS 5 X 5 KG (5% DTO LLEVANDO 5 O MAS)            18,370
+POOPY PETS VIRUTA (VIRUPACK X 10)                        16,900
+POOPY PETS VIRUTA POR UNIDAD                              2,000
+MICHIMIX AGLOMERANTE 4 KG (PROMO 2x1 HASTA AGOTAR)        5,500
+MICHIMIX AGLOMERANTE (POWER) 8 KG (PROMO 5% X5)           8,375
+MICHIMIX AGLOMERANTE (SUPER POWER) 8 KG (PROMO 5% X5)     9,963
+MICHIMIX AGLOMERANTE (AROMA) 8 KG (PROMO 5% X5)           9,170
+MICHIMIX AGLOMERANTE PREMIUM X 15                        10,900
+RUBICAT DIATOMEA X 10 (PROMO 5% X5)                       4,800
+RUBICAT PREMIUM BOLSA X 10KG                             10,560
+RUBICAT PREMIUM BIDON X 11KG                             13,400
+RUBICAT CLASSIC BIDON X 5.3 KG                            5,450
+RUBICAT CLASSIC BOLSA X 15 KG                            10,700
+RUBICAT SENSITIVE X 5 KG (PROMO 10% OFF)                 10,400
+RUBICAT SENSITIVE MICROESFERAS X 5 KG (PROMO 10% OFF)    12,000
+STARCAT MINERAL NEUTRO X BIDON 5KG                        4,590
+STARCAT MINERAL GARDENIA X BIDON 5KG                      5,000
+STARCAT MINERAL NEUTRO X 15 KG                            8,000
+STARCAT ARENA NEUTRO X BIDON 7 KG                         6,100
+STARCAT ARENA LIMON X BIDON 7 KG                          6,700
+STARCAT ARENA GARDENIA X BIDON 7 KG                       6,700
+STARCAT ARENA NEUTRO X BOLSA 4 X 4KG                     13,300
+PIEDRA CAN CAT SILICA X 3.8 KG              13,250
+PIEDRA CAN CAT SILICA LAVANDA X 3.8 KG      13,700
+PIEDRA CAN CAT SILICA LIMON X 3.8 KG        13,700
+PIEDRA CAN CAT SILICA PH CONTROL X 3.8 KG   19,100
+                 POUCH (SOBRECITOS) Y LATAS              PRECIO
+SIEGER LATA RECOVERY X 340 GR.                             6,800
+SIEGER POUCH RECOVERY X 100 GR.                           33,480
+ROYAL CANIN LATA RECOVERY                                  6,375
+ROYAL CANIN LATA MOTHER & BABYCAT X 195G                   5,510
+ROYAL CANIN LATA RENAL CANINE X 200G                       5,185
+ROYAL CANIN LATA GASTROINTESTINAL CANINE X 200G            5,185
+POUCH ROYAL KITTEN (12 X 85gr)                            31,000
+POUCH ROYAL URINARY CARE (12 X 85gr)                      30,800
+POUCH ROYAL URINARY S/O (12 X 85gr)                       36,000
+POUCH ROYAL SATIETY FELINE (12 X 85gr)                    36,000
+POUCH ROYAL INSTINCTIVE (12 X 85gr)                       30,800
+POUCH ROYAL INSTINCTIVE 7+ (12 X 85gr)                    30,800
+POUCH ROYAL DIGEST SENSITIVE (12 X 85gr)                  30,800
+POUCH ROYAL GASTROINTESTINAL FIBRE RESP (12 X 85gr)       36,000
+POUCH ROYAL GASTROINTESTINAL FELINE (12 X 85gr)           36,000
+POUCH ROYAL RENAL FELINE (12 X 85gr)                      36,000
+POUCH ROYAL EARLY RENAL FELINE (12 X 85gr) (CASTRADO)     36,000
+POUCH ROYAL AGEING 11+ (12 X 85gr)                        30,800
+POUCH ROYAL HAIR & SKIN BEAUTY (12 X 85gr)                30,800
+POUCH ROYAL HAIRBALL CARE (12 X 85gr)                     30,800
+POUCH ROYAL APPETITE CONTROL (12 X 85gr)                  30,800
+POUCH ROYAL LIGHT WEIGHT CARE (12 X 85gr)                 30,800
+POUCH ROYAL MINI AD (12 X 85gr)                           22,600
+POUCH ROYAL MINI PUPPY (12 X 85gr)                        22,600
+POUCH ROYAL MINI AEGING 12+ (12 X 85gr)                   22,600
+POUCH ROYAL MEDIUM ADULTO (10 X 85gr)                     30,800
+POUCH PRO PLAN ADULT DOG CHICKEN (15X100gr)               29,000
+POUCH PRO PLAN ADULT CAT POLLO (15X100gr)                 31,100
+POUCH PRO PLAN ADULT CAT SALMON (15X100gr)                31,100
+POUCH PRO PLAN STERILIZED CAT POLLO (15X100gr)            31,100
+POUCH CAT CHOW (POLLO/PESC/GATITOS)                       16,320
+POUCH FELIX (SALMON/POLLO/PESCADO BLANCO/ATUN)            15,130
+POUCH DOG CHOW (PAVO)                                     16,320
+DENTALIFE RAZAS PEQUEÑAS X 7 UN (42GR)                     2,960
+DENTALIFE RAZAS MEDIANAS X 7 UN (119GR)                    3,540
+DENTASTIX RAZAS PEQUEÑAS X 3 UN                            1,400
+DENTASTIX RAZAS MEDIANAS X 1 UN                              520
+DENTASTIX RAZAS MEDIANAS X 3 UN                            1,600
+DENTASTIX RAZAS MEDIANAS X 7 UN                            3,200
+LATAS PEDIGREE (CACH/CARNE)                                3,500
+LATAS WHISKAS (GATITOS/CARNE/ATUN)                         3,500
+POUCH PEDIGREE (POLLO/CARNE)                              10,950
+POUCH WHISKAS (PAVO/SARD/GATITO/SALM/PESC/CARNE/POLLO)    10,950
+POUCH NATUFRESH PERRO - POLLO                             12,950
+BOCADITO AUKI HIGAD/ESPIN 100 GRS                          1,200
+TOGO DESHIDRATADO HIGADO 80 GRS                            2,200
+                            PALITOS        PRECIO
+PALITOS X 200 UNID                           5,600
+                            OREJAS         PRECIO
+OREJAS MEDIANAS X UN                           510
+OREJAS GRANDES X UN                            840
+OREJAS DE CERDO X UN                           620
+                           CEREALES        PRECIO
+ALPISTE X 10 KG                             16,800
+CANARIO X 10                                14,300
+CARDENAL X 10                                7,900
+CONEJO X 25                                 18,200
+GIRASOL X 10 KG                             12,400
+MAIZ ENTERO X 30                            13,000
+MEZCLA GALLINA X 25                         11,900
+MIJO X 10                                    6,950
+                        ABRIGOS DE POLAR   PRECIO
+POLAR LISO 1 / 25 CM                         2,400
+POLAR LISO 2 / 30 CM                         2,400
+POLAR LISO 3 / 35CM                          2,040
+POLAR LISO 4 /40 CM                          2,490
+POLAR LISO 5 / 45 CM                         2,670
+POLAR LISO 6 / 50 CM                         3,200
+POLAR LISO 7 /55 CM                          3,490
+POLAR LISO 8 / 60 CM                         3,740
+POLAR LISO 9/ 65 CM                          4,020
+POLAR LISO 10 / 70 CM                        7,300
+POLAR SOFT 1 / 25 CM                         2,500
+POLAR SOFT 2 / 30 CM                         3,020
+POLAR SOFT 3 / 35 CM                         3,490
+POLAR SOFT 4 / 40 CM                         4,050
+POLAR SOFT 5 / 45 CM                         4,390
+POLAR SOFT 6 / 50 CM                         4,900
+POLAR SOFT 7 / 55 CM                         5,350
+POLAR SOFT 8 / 60 CM                         6,400
+POLAR SOFT 9 / 65 CM                         6,600
+POLAR SOFT 10/ 70 CM                         7,300
+POLAR SOFT 11/ 75 CM                         7,500
+POLAR SOFT 12/ 80 CM                         7,800
+                  CORREAS Y PRETALES           PRECIO
+PRETAL REGULABLE N° 1 (1,5 Cm de ancho)          3,050
+PRETAL REGULABLE N° 2 (2 Cm de ancho)            4,440
+PRETAL REGULABLE N° 3 (2,5 Cm de ancho)          5,050
+PRETAL REGULABLE N° 4 (3 Cm de ancho)            6,490
+COLLAR 1,5 Cm. Talle 1                           1,230
+COLLAR 1,5 Cm. Talle 2                           1,230
+COLLAR 1,5 Cm. Talle 3                           1,230
+COLLAR 2 Cm. Talle 4                             1,570
+COLLAR 2 Cm. Talle 5                             1,680
+COLLAR 2,5 Cm. Talle 6                           1,840
+COLLAR 3 Cm. Talle 7                             2,400
+COLLAR REGULABLE TALLE 1 - 15mm X 25-40cm        1,340
+COLLAR REGULABLE TALLE 2 - 20mm X 35-50cm        1,678
+COLLAR REGULABLE TALLE 3 - 25mm X 45-60cm        1,995
+COLLAR REGULABLE TALLE 4 - 30mm X 55-70cm        2,625
+CORREA REFORZADA De 1,5 Cm x 1,20 de largo       2,280
+CORREA REFORZADA De 2 Cm x 1,20 de largo         3,300
+CORREA REFORZADA De 2,5 Cm x 1,20 de largo       3,580
+CORREA REFORZADA De 3 Cm x 1,20 de largo         3,870
+CORREA LARGA REFORZADA 30mm X 2 mt DE LARGO      4,550
+CORREA LARGA REFORZADA 25mm X 2 mt DE LARGO      4,150
+CORREA LARGA REFORZADA 30mm X 3 mt DE LARGO      5,600
+CORREA LARGA REFORZADA 25mm X 3 mt DE LARGO      5,050
+CORREA LARGA REFORZADA 30mm X 5 mt DE LARGO      7,784
+CORREA LARGA REFORZADA 30mm X 10 mt DE LARGO    13,230
+CINTURÓN DE SEGURIDAD Correa de 2,5 Cm.          4,660
+                        RASCADORES             PRECIO
+RASCADOR ECO                                     4,800
+RASCADOR ECO XXL                                 8,500
+RASCADOR TITO                                    9,500
+RASCADOR OLITA                                   7,600
+RASCADOR CHATO HELICE                           15,600
+RASCADOR CONJUNTO OLAS                          13,000
+RASCADOR CONJUNTO INFINITO + HELICE             16,900
+RASCADOR RAMPA CON PELOTA                       11,300
+RASCADOR PESCADO CON PELOTA                     12,800
+RASCADOR ALARGADO CON PELOTA                    11,300
+                         HIGIENE              PRECIO
+BOLSA BATEA 70X40X10                            2,000
+REPUESTO SANITARIO PACK X 3 BOLSITAS            1,350
+PAÑO SANITARIO REUTILIZABLE (DOG IS GOD)       18,000
+PAÑO PET MINI 10 (45X55)                        8,200
+PAÑO PET MAX 10 (60X90)                        11,870
+PAÑO PET WASH BAÑO EN SECO                      3,830
+PAÑO PET TOALLITAS HUMEDAS                      3,429
+PAÑAL PAÑO PET MINI X 3                         3,370
+PAÑAL PAÑO PET MEDIANO X 3                      3,370
+PAÑAL PAÑO PET GRANDE X 3                       3,370
+PAÑO CAN CAT PREMIUM X 10 (60 X 60)             6,320
+PAÑO CAN CAT PREMIUM X 12 (60 X 90)            12,800
+PAÑO CAN CAT CARBON ACTIVADO X 10 (60 X 60)     7,760
+PAÑO CAN CAT PREMIUM X 20 (60 X 40)            10,800
+ALICATE CHICO                                   4,000
+CEPILLO DOBLE CHICO                             3,000
+CEPILLO DOBLE GRANDE                            4,000
+BANDEJA SANITARIA NEGRA                         2,000
+BANDEJA SANITARIA JUMBO 35 X 50                 8,000
+KIT SANITARIO MEDIANO COLOR                     4,500
+KIT SANITARIO MEDIANO NEGRO                     3,500
+ESPUMA SECA BABS                                8,400
+CAPSULA RECOLECTORA VACIA                         800
+                  COLCHONETAS Y SILLONES      PRECIO
+SILLON DENIM 40 X 40                           19,200
+SILLON DENIM 50 X 50                           25,800
+COLCHONETA ANTIDESGARRO ESTAMPADA 75X95        21,000
+COLCHONETA ANTIDESGARRO 100X100                19,000
+                       BOLSOS                 PRECIO
+BOLSO MAXICHUNI                                19,400
+BOLSO TRANSPORTADOR LISO                       14,400
+MOCHILA CAPSULA                                33,400
+TRANSPORTADORA RIGIDA MEDIANA                  40,000
+                    LINEA VETERINARIA
+                    COMPRIMIDOS BRAVECTO              PRECIO
+BRAVECTO GATO - 2 A 6 KG                               33,600
+BRAVECTO GATO - MAS DE 6 KG                            47,300
+BRAVECTO - 2 A 4,4                                     24,700
+BRAVECTO - 4,5 A 10                                    26,100
+BRAVECTO - 10 A 20                                     36,700
+BRAVECTO - 20 A 40                                     40,200
+BRAVECTO - 40 A 56                                     43,710
+         PIPETAS FIPROBIT (PULGAS Y GARRAPATAS)       PRECIO
+FIPROBIT - 0 A 10                                       3,650
+FIPROBIT - 10 A 20                                      4,020
+FIPROBIT - 20 A 40                                      4,500
+FIPROBIT - 40 A 60                                      4,700
+      PIPETAS FRONTLINE PLUS (PULGAS/GARRA/LARVAS)    PRECIO
+FRONTLINE PLUS VERDE - 2 A 10                           8,850
+FRONTLINE PLUS VERDE - 10 A 20                          9,560
+FRONTLINE PLUS VERDE - 20 A 40                         12,920
+FRONTLINE PLUS VERDE - 40 A 60                         16,810
+FRONTLINE PLUS VERDE - GATOS                            7,840
+    PIPETAS FRONTLINE SPOT ON (PULGAS Y GARRAPATAS)   PRECIO
+FRONTLINE SPOT ON AZUL - 2 A 10                         5,900
+FRONTLINE SPOT ON AZUL - 10 A 20                        6,500
+FRONTLINE SPOT ON AZUL - 20 A 40                        8,400
+FRONTLINE SPOT ON AZUL - GATOS                          5,460
+            COMPRIMIDOS GETS (SOLO PULGAS)            PRECIO
+GETS - 2,7 A 5,3                                        4,600
+GETS - 5 A 10                                           5,200
+GETS - 11 A 20                                          5,900
+GETS - 20 A 40                                          6,035
+GETS - 42 A 60                                          8,310
+           PIPETAS HECTOPAR (PULGAS Y GARRAPATAS)     PRECIO
+HECTOPAR GATO - 0 A 4                                   2,400
+HECTOPAR GATO - 4 A 8                                   2,400
+HECTOPAR PERRO - 0 A 4                                  2,400
+HECTOPAR PERRO - 4 A 10                                 2,400
+HECTOPAR PERRO - 10 A 25                                2,400
+HECTOPAR PERRO - 25 A 40                                2,400
+HECTOPAR PERRO - 40 A 60                                2,400
+     COMPRIMIDOS NEXGARD (PULGAS Y GARRAPATAS)        PRECIO
+NEXGARD - 2 A 5                                        15,250
+NEXGARD - 5 A 10                                       16,650
+NEXGARD - 10 A 25                                      21,800
+NEXGARD - 25 A 50                                      25,730
+   COMP. NEXGARD SPECTRA (PULGAS/GARRAPATAS/PARÁSITOS)   PRECIO
+NEXGARD SPECTRA XS DE 2 A 3,5                             17,585
+NEXGARD SPECTRA S DE 3,6 A 7,5                            18,780
+NEXGARD SPECTRA M DE 7,6 A 15                             20,840
+NEXGARD SPECTRA L DE 15,1 A 30                            27,310
+NEXGARD SPECTRA XL DE 30,1 A 60                           32,500
+         PIPETAS OSSPRET (PULGAS Y GARRAPATAS)           PRECIO
+PIPETA OSSPRET PERROS - 2 A 10                             2,300
+PIPETA OSSPRET PERROS - 11 A 20                            2,600
+PIPETA OSSPRET PERROS - 20 A 40                            3,100
+PIPETA OSSPRET PERROS - 40 A 60                            3,400
+PIPETA OSSPRET GATOS - 0 A 4                               2,250
+PIPETA OSSPRET GATOS - 4 A 8                               2,400
+                   COMPRIMIDO OSSPRET                    PRECIO
+OSSPRET COMPRIMIDO - 2 A 5                                 5,600
+OSSPRET COMPRIMIDO - 5 A 10                                6,200
+OSSPRET COMPRIMIDO - 10 A 20                               6,850
+OSSPRET COMPRIMIDO - 20 A 40                              11,800
+OSSPRET COMPRIMIDO - 40 A 80                              20,800
+          COMPRIMIDOS POWER (SOLO PULGAS)                PRECIO
+POWER COMPRIMIDOS - 2 A 5                                  6,740
+POWER COMPRIMIDOS - 5 A 10                                 7,520
+POWER COMPRIMIDOS - 10 A 20                                8,330
+POWER COMPRIMIDOS - 20 A 30                               10,450
+POWER COMPRIMIDOS - 30 A 40                               12,250
+   COMPRIMIDO POWER (PULGAS Y GARRAPATAS) 1 MES          PRECIO
+POWER GOLD 1 MES - 2,4 A 5 (PROMO 10+1)                   10,800
+POWER GOLD 1 MES - 4,6 A 10 (PROMO 10+1)                  11,450
+POWER GOLD 1 MES - 10 A 20 (PROMO 10+1)                   14,650
+POWER GOLD 1 MES - 20 A 40 (PROMO 10+1)                   16,850
+POWER GOLD 1 MES - 40 A 56 (PROMO 10+1)                   19,300
+    COMPRIMIDOS SIMPARICA (PULGAS Y GARRAPATAS)          PRECIO
+SIMPARICA 5 MG - 1,3 A 2,5                                14,940
+SIMPARICA 10 MG - 2,5 A 5                                 16,160
+SIMPARICA 20 MG - 5 A 10                                  16,500
+SIMPARICA 40 MG - 10 A 20                                 21,350
+SIMPARICA 80 MG - 20 A 40                                 25,000
+SIMPARICA 120 MG - 40 A 60                                29,800
+                   SHAMPOO MC DONALD                     PRECIO
+SHAMPOO FORMULA MC DONALD 200 ML                          11,660
+              SHAMPOO DERMOSEDAN                         PRECIO
+SHAMPOO DERMOSEDAN AVENA                                   5,500
+SHAMPOO DERMOSEDAN ANTISEBORREICO                          6,400
+SHAMPOO DERMOSEDAN CLORHEXIDINA                            6,925
+SHAMPOO DERMOSEDAN PEROXIDO DE BENZOILO                    6,800
+SHAMPOO DERMOSEDAN CLORHEXIDINA                            7,200
+             SHAMPOO OSSPRET LINEA BELLEZA      PRECIO
+SHAMPOO GATOS                                     6,350
+SHAMPOO ALGAS                                     6,200
+SHAMPOO DOUBLE 2 EN 1                             7,000
+SHAMPOO CACHORROS                                 5,800
+SHAMPOO MAXIMO COLOR BLANCO                       6,550
+SHAMPOO MAXIMO COLOR BRONCE                       6,550
+SHAMPOO MAXIMO COLOR NEGRO                        6,500
+SHAMPOO TRADICIONAL                               6,400
+SHAMPOO ALOE AVENA                                6,650
+SHAMPOO MEDICADO HIPOALERGÉNICO                   6,050
+           SHAMPOO OSSPRET LINEA BELLEZA        PRECIO
+ENJUAGUE EFECTO LACIO                             8,000
+ENJUAGUE VOLUMEN                                  8,000
+                    SHAMPOO ELMER               PRECIO
+SHAMPOO ELMER PULGUICIDA                          4,510
+                 SHAMPOO MOKSHA                 PRECIO
+SHAMPOO MOKSHA C/HENNA X 5 LTS                   48,600
+                SHAMPOO PAÑO PET                PRECIO
+SHAMPOO PAÑO PET 2 EN 1                           4,900
+               ANTIPARASITARIO MELTRA           PRECIO
+MELTRA GATOS - 0 A 4                              6,290
+MELTRA GATOS - 4 A 8                              7,000
+MELTRA GOLD 2 COMP - H/20KG                       3,125
+MELTRA GOLD 3 COMP - H/60 KG                      5,100
+MELTRA SUSPENSION X 15CC                          7,240
+                ANTIPARASITARIO TOTAL FULL      PRECIO
+TOTAL FULL SUSPENSION X 15 ML CACHORROS           6,250
+TOTAL FULL CG SUSPENSION PERRO Y GATO X 15 ML     8,740
+TOTAL FULL SUSPENSION GATOS X 15 ML               6,470
+TOTAL FULL GATO COMPRIMIDO                        4,210
+TOTAL FULL PERROS LC X 2COMP H/10 KG              3,560
+TOTAL FULL PERROS LC X 2COMP H/20 KG              4,205
+TOTAL FULL PERROS LC X 3COMP H/60 KG              7,120
+                       VARIOS      PRECIO
+OTOVIER NF X 25ML                    5,600
+OTOVIER LIMPIAOREJAS X 40ML          4,500
+TALCO HECTOPAR PLUS X 100            3,220
+COLLAR BABS ANTIPULGAS GATO          8,780
+COLLAR BABS ANTIPULGAS CHICO         7,770
+COLLAR BABS ANTIPULGAS MEDIANO       8,573
+COLLAR BABS ANTIPULGAS GRANDE        9,850
+COLLAR ECTHOL ANTIPULGAS GATO       10,260
+COLLAR ECTHOL ANTIPULGAS CHICO      10,260
+COLLAR ECTHOL ANTIPULGAS MED/GDE    11,340
+ECHTOL X 70 ML                       5,200
+ECHTOL X 120 ML                      7,400
+PASTA DENTAL PETDENT                 5,950
+DENTAL PLAX X 250 ML                 3,700
+SHULET 10 GR                         2,880
+SHULET 20 GR                         5,520
+SHULET 40 GR                        10,320
+SHULET 150 GR                       23,820
+SHULET 2,2 KG                      185,300
+
