@@ -9,25 +9,36 @@ define('ODOO_UID',     (int)(getenv('ODOO_UID') ?: 5));
 define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: 'd62315a2e15c6f5b560b3aeae3e2d9051993b8d1');
 
 /**
- * Catálogo de Empresas y Tenancies Principales
- * Cohoo actúa como canal principal de aceleración y salida comercial para unidades de negocio.
- * Excluidos: Estación 392 y Yesisanaciones.
+ * Catálogo de Emprendimientos Personales Prioritarios y Tenancies Odoo
+ * 
+ * PRIORIDAD ALTA (Atención & Desarrollo Estratégico):
+ * 1. Almitas Peludas   (Estética & Cuidado Canino)
+ * 2. ITDelivery        (Consultoría IT, ERP & Automatización Matriz)
+ * 3. LoopLab           (EdTech / Cursos de Inglés con IA)
+ * 4. Electroivan       (Electromecánica & Servicios)
+ * 5. Cursos del Oeste  (Capacitación / Ser-Nac)
+ * 6. Karioka           (Productora Musical & Eventos)
+ * 7. Essenza di Sole   (Cosmética & Cuidado Personal)
+ * 8. Cohoo             (Outlet Comercial + Tratado Envases Plásticos Comuna 12)
  */
 const COMPANY = [
-    'ITDelivery'           => 1,  // Consultoría IT & ERP Matriz
-    'Karioka'              => 2,  // Productora Musical & Eventos
-    'Almitas Peludas'      => 3,  // Cuidado & Estética Canina
-    'LoopLab'              => 4,  // EdTech & Cursos de Inglés
-    'Electroivan'          => 5,  // Electromecánica & Servicios
-    'Cohoo'                => 6,  // Outlet & Acelerador Comercial Principal
-    'Cursos del Oeste'     => 7,  // Plataforma E-learning / Ser-Nac
-    'Peirano'              => 8,  // Turnera & Soluciones Logísticas
-    'Nacucchio Sosa Tango' => 9,  // Escuela de Baile & Contenido
-    'Juana Sanchez'        => 10,
-    'El Palacio Vintage'   => 11,
-    'Root Hardware'        => 12,
-    'SEHYP Ascensores'     => 13,
-    'Piel Impresa'         => 14,
+    // ── Prioritarios ──────────────────────────────────────────────────────────
+    'ITDelivery'           => 1,  // Matriz ERP & Consultoría
+    'Karioka'              => 2,  // Eventos & Música
+    'Almitas Peludas'      => 3,  // Estética Canina
+    'LoopLab'              => 4,  // Cursos Inglés IA
+    'Electroivan'          => 5,  // Electromecánica
+    'Cohoo'                => 6,  // Outlet & Proyecto Envases Plásticos (Comuna 12)
+    'Cursos del Oeste'     => 7,  // Ser-Nac / E-learning
+    'Essenza di Sole'      => 8,  // Cosmética & Cuidado
+    // ── Clientes & Servicios Secundarios ──────────────────────────────────────
+    'Peirano'              => 9,  // Turnera & Logística
+    'Nacucchio Sosa Tango' => 10, // Escuela de Baile
+    'Juana Sanchez'        => 11,
+    'El Palacio Vintage'   => 12,
+    'Root Hardware'        => 13,
+    'SEHYP Ascensores'     => 14,
+    'Piel Impresa'         => 15,
 ];
 
 function odoo(string $model, string $method, array $args = [], array $kwargs = [], int $company = 1): mixed
