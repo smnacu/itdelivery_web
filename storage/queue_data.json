@@ -1,0 +1,27 @@
+[
+  {
+    "id": "queue_karioka_20260810",
+    "action": "create_appointment_and_products",
+    "status": "synced_to_odoo",
+    "odoo_lead_id": 15,
+    "odoo_partner_id": 22859,
+    "data": {
+      "dueno_nombre": "Karioka",
+      "mascotas": "Kiko, Clarita y Mila (3 gatos)",
+      "servicios": [
+        "Cepillado de 3 gatos",
+        "Corte de u\u00f1as"
+      ],
+      "productos_pedido": [
+        "1x CatPro Gatos Castrados 7.5 kg"
+      ],
+      "productos_devolucion": [
+        "2x Rubicat Premium 10 kg (devoluci\u00f3n pr\u00e9stamo)"
+      ],
+      "fecha_turno": "2026-08-10",
+      "company_id": 6
+    },
+    "created_at": "2026-08-08 12:55:12",
+    "attempts": 1
+  }
+]

@@ -6,10 +6,71 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almitas Peludas - Peluqueria Canina a Domicilio y Pedidos Mayoristas Morquis</title>
-    <meta name="description" content="Peluqueria y Estetica Canina a Domicilio. Pedidos mayoristas de alimentos (CatPro, Pro Plan, Royal Canin, Fawna, Eukanuba), piedritas sanitarias Rubicat y accesorios.">
+    <title>Peluquería Canina a Domicilio y Cat Sitting en Capital Federal | Almitas Peludas</title>
+    <meta name="description" content="Servicio profesional de peluquería canina y felina a domicilio en Capital Federal (CABA - Palermo, Belgrano, Recoleta, Caballito). Venta mayorista de alimento CatPro, Pro Plan, Royal Canin y piedritas sanitarias Rubicat.">
+    <meta name="keywords" content="peluqueria canina a domicilio capital federal, grooming felino caba, cepillado de gatos buenos aires, cat sitting caba, piedritas rubicat mayorista, alimentos para mascotas capital federal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://itdelivery.com.ar/almitas/">
     <meta name="theme-color" content="#0f172a">
     
+    <!-- Geo Target SEO for CABA -->
+    <meta name="geo.region" content="AR-C">
+    <meta name="geo.placename" content="Buenos Aires, Capital Federal">
+    <meta name="geo.position" content="-34.603722;-58.381592">
+    <meta name="ICBM" content="-34.603722, -58.381592">
+
+    <!-- Open Graph / Social Media SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itdelivery.com.ar/almitas/">
+    <meta property="og:title" content="Peluquería Canina a Domicilio y Estética Felina CABA | Almitas Peludas">
+    <meta property="og:description" content="Turnera online de baños, cortes y grooming a domicilio en Capital Federal. Venta directa de bolsas de alimentos y piedritas Rubicat.">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- JSON-LD Structured Data (Google Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Almitas Peludas",
+      "description": "Peluquería Canina y Felina a Domicilio, Cat Sitting y Venta Mayorista de Insumos para Mascotas en Capital Federal.",
+      "url": "https://itdelivery.com.ar/almitas/",
+      "telephone": "+541112345678",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressRegion": "Capital Federal",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-34.603722",
+        "longitude": "-58.381592"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Sa 09:00-19:00",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Combo CABA Full Canino",
+          "price": "28000",
+          "priceCurrency": "ARS"
+        },
+        {
+          "@type": "Offer",
+          "name": "Combo Felino CABA",
+          "price": "22000",
+          "priceCurrency": "ARS"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pack Almitas CABA (Peluquería + Bolsón Rubicat 10kg)",
+          "price": "35000",
+          "priceCurrency": "ARS"
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -873,11 +934,14 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="servicio">Servicio Requerido *</label>
+                        <label for="servicio">Servicio / Combo Requerido (Capital Federal) *</label>
                         <select id="servicio" required>
-                            <option value="Peluqueria Canina Completa ($25.000)">Peluqueria Canina Completa ($25.000)</option>
-                            <option value="Bano & Higiene Profunda ($18.000)">Bano & Higiene Profunda ($18.000)</option>
-                            <option value="Corte de Unas & Desparasitacion ($10.000)">Corte de Unas & Desparasitacion ($10.000)</option>
+                            <option value="Combo CABA Full Canino (Peluqueria Completa + Baño Higienico - $28.000)">Combo CABA Full Canino (Peluquería Completa + Baño Higiénico - $28.000)</option>
+                            <option value="Combo Felino CABA (Cepillado Multigato + Corte de Uñas - $22.000)">Combo Felino CABA (Cepillado Multigato + Corte de Uñas - $22.000)</option>
+                            <option value="Pack Almitas CABA (Peluqueria + Bolsón Rubicat 10kg + Envío Bonificado - $35.000)">Pack Almitas CABA (Peluquería + Bolsón Rubicat 10kg + Envío Bonificado - $35.000)</option>
+                            <option value="Peluqueria Canina Completa ($25.000)">Peluquería Canina Completa Individual ($25.000)</option>
+                            <option value="Bano & Higiene Profunda ($18.000)">Baño & Higiene Profunda ($18.000)</option>
+                            <option value="Corte de Unas & Desparasitacion ($10.000)">Corte de Uñas & Desparasitación Add-on ($10.000)</option>
                         </select>
                     </div>
 
@@ -901,8 +965,8 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                         <textarea id="notas" rows="2" placeholder="Detalles sobre la mascota..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary" id="btn-submit-apt">
-                        Reservar Turno en Odoo
+                    <button type="submit" class="btn-primary btn-whatsapp" id="btn-submit-apt">
+                        Reservar Turno en Odoo y Confirmar por WhatsApp
                     </button>
                 </form>
             </div>
@@ -1134,16 +1198,16 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
 
             const payload = {
                 action: 'create_appointment',
-                dueno_nombre: document.getElementById('dueno_nombre').value,
-                telefono: document.getElementById('telefono').value,
-                mascota_nombre: document.getElementById('mascota_nombre').value,
-                mascota_raza: document.getElementById('mascota_raza').value,
-                direccion: document.getElementById('direccion').value,
-                barrio_zona: document.getElementById('barrio_zona').value,
+                dueno_nombre: document.getElementById('dueno_nombre').value.trim(),
+                telefono: document.getElementById('telefono').value.trim(),
+                mascota_nombre: document.getElementById('mascota_nombre').value.trim(),
+                mascota_raza: document.getElementById('mascota_raza').value.trim(),
+                direccion: document.getElementById('direccion').value.trim(),
+                barrio_zona: document.getElementById('barrio_zona').value.trim(),
                 servicio: document.getElementById('servicio').value,
                 fecha_turno: document.getElementById('fecha_turno').value,
                 horario_turno: document.getElementById('horario_turno').value,
-                notas: document.getElementById('notas').value
+                notas: document.getElementById('notas').value.trim()
             };
 
             try {
@@ -1155,7 +1219,22 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 const data = await res.json();
 
                 if (data.success) {
-                    showToast('Turno registrado en Odoo. Nos comunicaremos por WhatsApp.');
+                    showToast('Turno registrado en Odoo 19. Abriendo WhatsApp para confirmación instantánea...');
+
+                    // Generar mensaje formateado para confirmación por WhatsApp
+                    let text = `RESERVA DE TURNO - ALMITAS PELUDAS\n`;
+                    text += `------------------------------------\n`;
+                    text += `Cliente: ${payload.dueno_nombre} (${payload.telefono})\n`;
+                    text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Sin especificar'})\n`;
+                    text += `Servicio: ${payload.servicio}\n`;
+                    text += `Fecha: ${payload.fecha_turno} (${payload.horario_turno})\n`;
+                    text += `Direccion: ${payload.direccion}${payload.barrio_zona ? ', ' + payload.barrio_zona : ''}\n`;
+                    if (payload.notas) text += `Notas: ${payload.notas}\n`;
+                    text += `\nSolicito confirmación del turno por este medio.`;
+
+                    const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                    setTimeout(() => window.open(waUrl, '_blank'), 600);
+
                     document.getElementById('appointment-form').reset();
                 } else {
                     alert(data.error || 'Error registrando turno.');
@@ -1164,7 +1243,7 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 alert('Error conectando con la API.');
             } finally {
                 btn.disabled = false;
-                btn.innerText = 'Reservar Turno en Odoo';
+                btn.innerText = 'Reservar Turno en Odoo y Confirmar por WhatsApp';
             }
         }
 

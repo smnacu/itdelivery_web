@@ -3,10 +3,16 @@
  * ITDelivery — Odoo 19 Enterprise JSON-RPC Client & Multi-Company Directory
  */
 
-define('ODOO_URL',     getenv('ODOO_URL')     ?: 'https://itdelivery.odoo.com');
-define('ODOO_DB',      getenv('ODOO_DB')      ?: 'karioka-karioka-33462739');
-define('ODOO_UID',     (int)(getenv('ODOO_UID') ?: 5));
-define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: 'd62315a2e15c6f5b560b3aeae3e2d9051993b8d1');
+// Cargar variables de entorno locales si existen en storage protegido
+$env_file = __DIR__ . '/../storage/.env.php';
+if (file_exists($env_file)) {
+    include_once $env_file;
+}
+
+define('ODOO_URL',     getenv('ODOO_URL')     ?: (defined('ENV_ODOO_URL') ? ENV_ODOO_URL : 'https://itdelivery.odoo.com'));
+define('ODOO_DB',      getenv('ODOO_DB')      ?: (defined('ENV_ODOO_DB') ? ENV_ODOO_DB : 'karioka-karioka-33462739'));
+define('ODOO_UID',     (int)(getenv('ODOO_UID') ?: (defined('ENV_ODOO_UID') ? ENV_ODOO_UID : 5)));
+define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: (defined('ENV_ODOO_API_KEY') ? ENV_ODOO_API_KEY : ''));
 
 /**
  * Catálogo de Emprendimientos Personales Prioritarios y Tenancies Odoo
@@ -23,22 +29,12 @@ define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: 'd62315a2e15c6f5b560b3aeae3e2d9
  */
 const COMPANY = [
     // ── Prioritarios ──────────────────────────────────────────────────────────
-    'ITDelivery'           => 1,  // Matriz ERP & Consultoría
-    'Karioka'              => 2,  // Eventos & Música
-    'Almitas Peludas'      => 3,  // Estética Canina
+    'ITDelivery'           => 2,  // Matriz ERP & Consultoría
+    'Karioka'              => 1,  // Eventos & Música
+    'Almitas Peludas'      => 6,  // Estética Canina & Mayorista Morquis
     'LoopLab'              => 4,  // Cursos Inglés IA
-    'Electroivan'          => 5,  // Electromecánica
-    'Cohoo'                => 6,  // Outlet & Proyecto Envases Plásticos (Comuna 12)
-    'Cursos del Oeste'     => 7,  // Ser-Nac / E-learning
-    'Essenza di Sole'      => 8,  // Cosmética & Cuidado
-    // ── Clientes & Servicios Secundarios ──────────────────────────────────────
-    'Peirano'              => 9,  // Turnera & Logística
-    'Nacucchio Sosa Tango' => 10, // Escuela de Baile
-    'Juana Sanchez'        => 11,
-    'El Palacio Vintage'   => 12,
-    'Root Hardware'        => 13,
-    'SEHYP Ascensores'     => 14,
-    'Piel Impresa'         => 15,
+    'Santi Nacu'           => 5,  // Servicios Personales
+    'Cursos del Oeste'     => 3,  // Ser-Nac / E-learning
 ];
 
 function odoo(string $model, string $method, array $args = [], array $kwargs = [], int $company = 1): mixed

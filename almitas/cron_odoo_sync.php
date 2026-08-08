@@ -1,12 +1,12 @@
 <?php
 /**
  * Cron de Sincronizacion Asincronica en Segundo Plano: Web -> Odoo 19 Enterprise
- * Almitas Peludas (Company ID 3)
+ * Almitas Peludas (Company ID 6)
  */
 
 require_once __DIR__ . '/../includes/odoo_api.php';
 
-$queue_file = __DIR__ . '/queue_data.json';
+$queue_file = __DIR__ . '/../storage/queue_data.json';
 
 if (!file_exists($queue_file)) {
     exit("No hay items en la cola de sincronizacion.\n");

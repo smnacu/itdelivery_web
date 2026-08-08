@@ -15,7 +15,11 @@ $CURRENT_AMOUNT = 58680; // Pedido inicial Karioka (1x CatPro + 2x Rubicat Premi
 // Función auxiliar para encolar tareas de forma 100% fail-safe (<10ms)
 function enqueue_task(string $action, array $payload): string
 {
-    $queue_file = __DIR__ . '/queue_data.json';
+    $storage_dir = __DIR__ . '/../storage';
+    if (!is_dir($storage_dir)) {
+        mkdir($storage_dir, 0755, true);
+    }
+    $queue_file = $storage_dir . '/queue_data.json';
     $queue = file_exists($queue_file) ? json_decode(file_get_contents($queue_file), true) ?? [] : [];
     
     $item_id = uniqid('queue_', true);
@@ -46,7 +50,7 @@ if ($action === 'get_goal_status') {
 }
 
 if ($action === 'get_stock') {
-    // Consulta los productos de Almitas Peludas (Company ID 3) con stock en Odoo 19
+    // Consulta los productos de Almitas Peludas (Company ID 6) con stock en Odoo 19
     try {
         $products = odoo(
             'product.product',
@@ -67,7 +71,17 @@ if ($action === 'get_stock') {
 }
 
 if ($action === 'sync_morquis_to_odoo') {
-    // Importa/Sincroniza los artículos del catálogo de Morquis a Odoo 19 Company 3
+    // Verificar token administrativo de seguridad
+    $admin_token = getenv('ADMIN_SYNC_TOKEN') ?: 'itd_secure_sync_key_2026';
+    $provided_token = $_SERVER['HTTP_X_ADMIN_TOKEN'] ?? ($data['admin_token'] ?? '');
+
+    if (empty($provided_token) || !hash_equals($admin_token, $provided_token)) {
+        http_response_code(403);
+        echo json_encode(['success' => false, 'error' => 'Acceso denegado. Token de administración no válido.']);
+        exit;
+    }
+
+    // Importa/Sincroniza los artículos del catálogo de Morquis a Odoo 19 Company 6
     $catalog_file = __DIR__ . '/morquis_parsed_all.json';
     if (!file_exists($catalog_file)) {
         echo json_encode(['success' => false, 'error' => 'No se encontro el archivo morquis_parsed_all.json']);
@@ -78,7 +92,7 @@ if ($action === 'sync_morquis_to_odoo') {
     $synced = 0;
     $errors = [];
 
-    // Tomamos los primeros 20 para sincronizacion rápida
+    // Tomamos los primeros 20 para sincronización rápida
     $sample_batch = array_slice($morquis_items, 0, 20);
 
     foreach ($sample_batch as $item) {
@@ -105,7 +119,7 @@ if ($action === 'sync_morquis_to_odoo') {
 
     echo json_encode([
         'success' => true,
-        'message' => "Sincronizados $synced productos en Odoo 19 bajo Company ID 3 (Almitas Peludas).",
+        'message' => "Sincronizados $synced productos en Odoo 19 bajo Company ID 6 (Almitas Peludas).",
         'errors'  => $errors
     ]);
     exit;
