@@ -61,21 +61,24 @@ ITDelivery administra y respalda tecnológicamente el portfolio multi-tenancy en
 | Compañía / Marca | Rubro / Enfoque | Tenancy Odoo |
 |---|---|---|
 | **ITDelivery** | Consultoría IT, ERP Matriz, Cloud & IA | Company ID: 2 (Matriz) |
+| **Cohoo** | Co-Living, Real Estate & Hubs Colaborativos | Company ID: 9 |
 | **Electro Iván** | Electromecánica, Taller POS & E-commerce | Company ID: 8 |
 | **Almitas Peludas** | Estética Canina & Mayorista Morquis | Company ID: 6 |
 | **LoopLab** | EdTech / Capacitación en Inglés con IA | Company ID: 4 |
 | **Cursos del Oeste** | E-learning & Capacitación Profesional | Company ID: 3 |
 | **Karioka** | Productora Musical & Eventos | Company ID: 1 |
-| **Cohoo** | Outlet Comercial & Tratado Envases Comuna 12 | Comercial Outlet |
 
 ---
 
-## 4. Caso de Éxito de Portfolio: Electro Iván (MSP / Headless ERP)
+## 4. Unidades de Negocio Destacadas
 
-**Electro Iván** opera bajo el modelo **Headless MSP** administrado por ITDelivery:
-- **E-commerce & Catálogo Técnico**: Presentación de motores, bombas (Czerweny, ESPA) con autoloader PSR-4 nativo y patrón `ProductRepository`.
+### A. Cohoo (Co-Living & Real Estate Management) — Tenant ID: 9
+- **Visión**: Red de espacios Co-Living, Co-Working y Hubs urbanos colaborativos administrados por ITDelivery.
+- **Estrategia Inmobiliaria**: Gestión de propiedades, contratos de membresía, cobros recurrentes y mantenimiento centralizados en Odoo 19 Enterprise.
+
+### B. Electro Iván (MSP / Headless ERP) — Tenant ID: 8
+- **E-commerce & Catálogo Técnico**: Motores y bombas (Czerweny, ESPA) con autoloader PSR-4 nativo y `ProductRepository`.
 - **Panel Kiosk Taller POS (6 Módulos)**: Interfaces táctiles optimizadas para taller (Recepción, Stock, Balance, Personal, Alertas de Garantía a 90 días).
-- **Modelo de Negocio**: ITDelivery cobra un abono mensual de mantenimiento IT e infraestructura, sirviendo las consultas al WhatsApp de Electro Iván sin gastar licencias adicionales de usuario en Odoo.
 
 ---
 
@@ -88,10 +91,6 @@ ITDelivery administra y respalda tecnológicamente el portfolio multi-tenancy en
 - **Verde Acento (Success/Emerald)**: `#3fb950` — Estado activo, crecimiento y conversiones.
 - **Violeta IA (Purple Glow)**: `#a371f7` — Innovación, LLMs y agentes autónomos.
 - **Texto Principal**: `#f0f6fc` | **Texto Secundario**: `#9198a1`.
-
-### Tipografía & Jerarquía
-- **Fuente Principal**: `Inter` (Google Fonts), sans-serif.
-- **Ponderaciones**: `300` (Light), `400` (Regular), `600` (SemiBold), `800` (ExtraBold para Hero & Titles).
 
 ---
 

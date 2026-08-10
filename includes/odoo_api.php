@@ -36,6 +36,8 @@ const COMPANY = [
     'Santi Nacu'           => 5,  // Servicios Personales & Marca Personal
     'Almitas Peludas'      => 6,  // Estética Canina & Mayorista Morquis
     'Consorcio Escalada'   => 7,  // Consorcio Escalada 4265 Torres 3 y 4
+    'Electroivan'          => 8,  // Electromecánica & Taller
+    'Cohoo'                => 9,  // Co-Living, Propiedades & Hubs Colaborativos
 ];
 
 function odoo(string $model, string $method, array $args = [], array $kwargs = [], int $company = 1): mixed
