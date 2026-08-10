@@ -953,9 +953,31 @@ if (isset($_GET['admin']) && $_GET['admin'] === '1') {
             <!-- Panel 2: Turnera Peluquería Canina a Domicilio y Cotizador de Manto -->
             <div class="panel-card" id="turnera">
                 <h3 class="panel-title">Cotizador & Turnera a Domicilio</h3>
-                <p class="panel-subtitle">Cotiza en tiempo real segun tamaño, estado del manto, zona y rutina de mantenimiento.</p>
+                <p class="panel-subtitle">Cotiza en tiempo real segun tamaño, especie, servicio de Cat Sitting por Rossmari y rutina de mantenimiento.</p>
 
                 <form id="appointment-form" onsubmit="submitAppointment(event)">
+                    <!-- Selector de Especie -->
+                    <div class="form-group" style="margin-bottom: 1.25rem;">
+                        <label style="font-weight: 700; color: var(--gold); display: block; margin-bottom: 0.5rem;">Especie & Servicio Requerido *</label>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button type="button" id="btn-especie-perro" class="chip active" style="flex: 1; padding: 0.65rem; text-align: center; justify-content: center; font-weight: 600;" onclick="setEspecie('perro')">🐶 Perro (Peluquería & Grooming)</button>
+                            <button type="button" id="btn-especie-gato" class="chip" style="flex: 1; padding: 0.65rem; text-align: center; justify-content: center; font-weight: 600;" onclick="setEspecie('gato')">🐱 Gato (Cat Sitting por Rossmari)</button>
+                        </div>
+                    </div>
+
+                    <!-- Card Destacada Rossmari para Gatos -->
+                    <div id="rossmari-card" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1.25rem;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="font-size: 1.4rem;">🐱</span>
+                            <div>
+                                <strong style="color: var(--emerald); font-size: 0.95rem;">Rossmari — Cat Sitter & Especialista Felina de Almitas Peludas</strong>
+                                <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.4;">
+                                    Cuidado respetuoso sin estrés en tu hogar. Visitas de alimentación, higiene de litera, juego adaptado y reportes diarios con fotos/videos a tu WhatsApp.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="dueno_nombre">Nombre del Dueno/a *</label>
@@ -970,11 +992,11 @@ if (isset($_GET['admin']) && $_GET['admin'] === '1') {
                     <div class="form-row">
                         <div class="form-group">
                             <label for="mascota_nombre">Nombre de la Mascota *</label>
-                            <input type="text" id="mascota_nombre" required placeholder="Ej: Firulais">
+                            <input type="text" id="mascota_nombre" required placeholder="Ej: Firulais / Mishi">
                         </div>
                         <div class="form-group">
-                            <label for="mascota_raza">Raza / Meztizo</label>
-                            <input type="text" id="mascota_raza" placeholder="Ej: Caniche, Golden, Mestizo...">
+                            <label for="mascota_raza">Raza / Mestizo</label>
+                            <input type="text" id="mascota_raza" placeholder="Ej: Caniche, Siamés, Mestizo...">
                         </div>
                     </div>
 
@@ -994,42 +1016,77 @@ if (isset($_GET['admin']) && $_GET['admin'] === '1') {
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="mascota_tamano">Tamano de la Mascota *</label>
-                            <select id="mascota_tamano" required>
-                                <option value="Chico (hasta 8 kg - Caniche, Pug, Yorkie)" data-base="25000">Chico (hasta 8 kg - Caniche, Pug, Yorkie) - Base $25.000</option>
-                                <option value="Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer)" data-base="32000">Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer) - Base $32.000</option>
-                                <option value="Grande (18 a 35 kg - Golden, Labrador, Border Collie)" data-base="42000">Grande (18 a 35 kg - Golden, Labrador, Border Collie) - Base $42.000</option>
-                                <option value="Gigante (+35 kg - San Bernardo, Gran Danés, Mastín)" data-base="52000">Gigante (+35 kg - San Bernardo, Gran Danés, Mastín) - Base $52.000</option>
-                            </select>
+                    <!-- Campos Modo Perro -->
+                    <div id="container-perro-opciones">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mascota_tamano">Tamano de la Mascota *</label>
+                                <select id="mascota_tamano">
+                                    <option value="Chico (hasta 8 kg - Caniche, Pug, Yorkie)" data-base="25000">Chico (hasta 8 kg - Caniche, Pug, Yorkie) - Base $25.000</option>
+                                    <option value="Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer)" data-base="32000">Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer) - Base $32.000</option>
+                                    <option value="Grande (18 a 35 kg - Golden, Labrador, Border Collie)" data-base="42000">Grande (18 a 35 kg - Golden, Labrador, Border Collie) - Base $42.000</option>
+                                    <option value="Gigante (+35 kg - San Bernardo, Gran Danés, Mastín)" data-base="52000">Gigante (+35 kg - San Bernardo, Gran Danés, Mastín) - Base $52.000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="manto_estado">Estado del Manto & Trabajo *</label>
+                                <select id="manto_estado">
+                                    <option value="Normal / Manto Saludable" data-adicional="0">Normal / Manto Saludable (+$0)</option>
+                                    <option value="Muda / Deslanado Intensivo de Subpelo" data-adicional="5000">Muda / Deslanado Intensivo de Subpelo (+$5.000)</option>
+                                    <option value="Nudos Moderados / Desanudado Progresivo" data-adicional="8000">Nudos Moderados / Desanudado Progresivo (+$8.000)</option>
+                                    <option value="Fieltrado / Nudos Severos (Trabajo Paciente / Higiénico)" data-adicional="12000">Fieltrado / Nudos Severos (+$12.000)</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="manto_estado">Estado del Manto & Trabajo *</label>
-                            <select id="manto_estado" required>
-                                <option value="Normal / Manto Saludable" data-adicional="0">Normal / Manto Saludable (+$0)</option>
-                                <option value="Muda / Deslanado Intensivo de Subpelo" data-adicional="5000">Muda / Deslanado Intensivo de Subpelo (+$5.000)</option>
-                                <option value="Nudos Moderados / Desanudado Progresivo" data-adicional="8000">Nudos Moderados / Desanudado Progresivo (+$8.000)</option>
-                                <option value="Fieltrado / Nudos Severos (Trabajo Paciente / Higiénico)" data-adicional="12000">Fieltrado / Nudos Severos (+$12.000)</option>
-                            </select>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tratamiento_servicio">Tratamiento Requerido *</label>
+                                <select id="tratamiento_servicio">
+                                    <option value="Baño & Higiene Profunda (Uñas, Oídos, Sanitario)" data-adicional="0">Baño & Higiene Profunda (Uñas, Oídos, Sanitario - +$0)</option>
+                                    <option value="Corte de Raza / Tijera / Grooming Completo" data-adicional="5000">Corte de Raza / Tijera / Grooming Completo (+$5.000)</option>
+                                    <option value="Baño Terapéutico / Dermocosmético (Piel Sensible)" data-adicional="4000">Baño Terapéutico / Dermocosmético (Piel Sensible - +$4.000)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="frecuencia_rutina">Plan de Rutina & Hábito del Manto *</label>
+                                <select id="frecuencia_rutina">
+                                    <option value="Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)" data-descuento="0.10">Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)</option>
+                                    <option value="Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)" data-descuento="0.05" selected>Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)</option>
+                                    <option value="Visita Eventual / Ocasional" data-descuento="0">Visita Eventual / Ocasional (Sin Descuento)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="tratamiento_servicio">Tratamiento Requerido *</label>
-                            <select id="tratamiento_servicio" required>
-                                <option value="Baño & Higiene Profunda (Uñas, Oídos, Sanitario)" data-adicional="0">Baño & Higiene Profunda (Uñas, Oídos, Sanitario - +$0)</option>
-                                <option value="Corte de Raza / Tijera / Grooming Completo" data-adicional="5000">Corte de Raza / Tijera / Grooming Completo (+$5.000)</option>
-                                <option value="Baño Terapéutico / Dermocosmético (Piel Sensible)" data-adicional="4000">Baño Terapéutico / Dermocosmético (Piel Sensible - +$4.000)</option>
-                            </select>
+                    <!-- Campos Modo Gato (Rossmari Cat Sitting) -->
+                    <div id="container-gato-opciones" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="servicio_felino">Servicio Felino Rossmari *</label>
+                                <select id="servicio_felino">
+                                    <option value="Cat Sitting / Visita de Cuidado a Domicilio (Rossmari)" data-base="18000">Cat Sitting / Visita de Cuidado a Domicilio (Litera, comida, juego) - Base $18.000</option>
+                                    <option value="Cepillado Felino & Deslanado Suave sin Estrés" data-base="22000">Cepillado Felino & Deslanado Suave sin Estrés - Base $22.000</option>
+                                    <option value="Combo Multigato (Cat Sitting + Grooming Suave)" data-base="28000">Combo Multigato (Cat Sitting + Grooming Suave) - Base $28.000</option>
+                                    <option value="Pack Almitas Felino (Sitting + Bolsón Rubicat 10kg + Envío Gratis)" data-base="35000">Pack Almitas Felino (Sitting + Bolsón Rubicat 10kg + Envío Gratis) - Base $35.000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad_gatos">Cantidad de Gatos en el Hogar *</label>
+                                <select id="cantidad_gatos">
+                                    <option value="1 Gato en Casa" data-adicional="0">1 Gato en Casa (+$0)</option>
+                                    <option value="2 Gatos en Casa" data-adicional="4000">2 Gatos en Casa (+$4.000)</option>
+                                    <option value="3 o más Gatos (Hogar Multigato)" data-adicional="7000">3 o más Gatos (Hogar Multigato +$7.000)</option>
+                                </select>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="frecuencia_rutina">Plan de Rutina & Hábito del Manto *</label>
-                            <select id="frecuencia_rutina" required>
-                                <option value="Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)" data-descuento="0.10">Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)</option>
-                                <option value="Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)" data-descuento="0.05" selected>Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)</option>
-                                <option value="Visita Eventual / Ocasional" data-descuento="0">Visita Eventual / Ocasional (Sin Descuento)</option>
+                            <label for="frecuencia_felina">Frecuencia / Pack Viajero *</label>
+                            <select id="frecuencia_felina">
+                                <option value="Visita Única / Eventual" data-descuento="0">Visita Única / Eventual (Sin Descuento)</option>
+                                <option value="Pack Diario Viajero (3 a 7 días seguidos - 10% OFF)" data-descuento="0.10">Pack Diario Viajero (3 a 7 días - 10% OFF)</option>
+                                <option value="Mantenimiento Quincenal de Cepillado (5% OFF)" data-descuento="0.05">Mantenimiento Quincenal (5% OFF)</option>
                             </select>
                         </div>
                     </div>
@@ -1384,38 +1441,101 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             window.open(url, '_blank');
         }
 
+        let currentEspecie = 'perro';
+
+        function setEspecie(esp) {
+            currentEspecie = esp;
+            const btnPerro = document.getElementById('btn-especie-perro');
+            const btnGato = document.getElementById('btn-especie-gato');
+            const rossmariCard = document.getElementById('rossmari-card');
+            const perroContainer = document.getElementById('container-perro-opciones');
+            const gatoContainer = document.getElementById('container-gato-opciones');
+
+            if (esp === 'gato') {
+                btnPerro.classList.remove('active');
+                btnGato.classList.add('active');
+                rossmariCard.style.display = 'block';
+                perroContainer.style.display = 'none';
+                gatoContainer.style.display = 'block';
+            } else {
+                btnGato.classList.remove('active');
+                btnPerro.classList.add('active');
+                rossmariCard.style.display = 'none';
+                gatoContainer.style.display = 'none';
+                perroContainer.style.display = 'block';
+            }
+            updateLiveSummary();
+        }
+
+        function getDatasetValue(elementId, datasetKey, fallback = '0') {
+            const el = document.getElementById(elementId);
+            if (!el || el.selectedIndex < 0) return fallback;
+            const opt = el.options[el.selectedIndex];
+            return (opt && opt.dataset && opt.dataset[datasetKey] !== undefined) ? opt.dataset[datasetKey] : fallback;
+        }
+
+        function getSelectValue(elementId, fallback = '') {
+            const el = document.getElementById(elementId);
+            if (!el || el.selectedIndex < 0) return fallback;
+            return el.value || fallback;
+        }
+
         function calculateAppointmentQuote() {
-            const tamanoSel = document.getElementById('mascota_tamano');
-            const mantoSel = document.getElementById('manto_estado');
-            const tratamientoSel = document.getElementById('tratamiento_servicio');
-            const zonaSel = document.getElementById('zona_atencion');
-            const rutinaSel = document.getElementById('frecuencia_rutina');
+            const viaticoZona = parseInt(getDatasetValue('zona_atencion', 'viatico', '0'), 10);
+            const zonaTxt = getSelectValue('zona_atencion', '');
 
-            const basePrice = parseInt(tamanoSel?.options[tamanoSel.selectedIndex]?.dataset?.base || '25000', 10);
-            const adicionalManto = parseInt(mantoSel?.options[mantoSel.selectedIndex]?.dataset?.adicional || '0', 10);
-            const adicionalTratamiento = parseInt(tratamientoSel?.options[tratamientoSel.selectedIndex]?.dataset?.adicional || '0', 10);
-            const viaticoZona = parseInt(zonaSel?.options[zonaSel.selectedIndex]?.dataset?.viatico || '0', 10);
-            const descPct = parseFloat(rutinaSel?.options[rutinaSel.selectedIndex]?.dataset?.descuento || '0');
+            if (currentEspecie === 'gato') {
+                const basePrice = parseInt(getDatasetValue('servicio_felino', 'base', '18000'), 10);
+                const adicionalGatos = parseInt(getDatasetValue('cantidad_gatos', 'adicional', '0'), 10);
+                const descPct = parseFloat(getDatasetValue('frecuencia_felina', 'descuento', '0'));
 
-            const subtotal = basePrice + adicionalManto + adicionalTratamiento + viaticoZona;
-            const descuento = Math.round(subtotal * descPct);
-            const total = subtotal - descuento;
+                const subtotal = basePrice + adicionalGatos + viaticoZona;
+                const descuento = Math.round(subtotal * descPct);
+                const total = subtotal - descuento;
 
-            return {
-                basePrice,
-                adicionalManto,
-                adicionalTratamiento,
-                viaticoZona,
-                descPct,
-                descuento,
-                subtotal,
-                total,
-                tamanoTxt: tamanoSel?.value || '',
-                mantoTxt: mantoSel?.value || '',
-                tratamientoTxt: tratamientoSel?.value || '',
-                zonaTxt: zonaSel?.value || '',
-                rutinaTxt: rutinaSel?.value || ''
-            };
+                return {
+                    especie: 'gato',
+                    basePrice,
+                    adicionalManto: adicionalGatos,
+                    adicionalTratamiento: 0,
+                    viaticoZona,
+                    descPct,
+                    descuento,
+                    subtotal,
+                    total,
+                    tamanoTxt: getSelectValue('cantidad_gatos', '1 Gato en Casa'),
+                    mantoTxt: 'Cuidado Felino sin Estrés (Rossmari)',
+                    tratamientoTxt: getSelectValue('servicio_felino', 'Cat Sitting a Domicilio'),
+                    zonaTxt,
+                    rutinaTxt: getSelectValue('frecuencia_felina', 'Visita Única / Eventual')
+                };
+            } else {
+                const basePrice = parseInt(getDatasetValue('mascota_tamano', 'base', '25000'), 10);
+                const adicionalManto = parseInt(getDatasetValue('manto_estado', 'adicional', '0'), 10);
+                const adicionalTratamiento = parseInt(getDatasetValue('tratamiento_servicio', 'adicional', '0'), 10);
+                const descPct = parseFloat(getDatasetValue('frecuencia_rutina', 'descuento', '0'));
+
+                const subtotal = basePrice + adicionalManto + adicionalTratamiento + viaticoZona;
+                const descuento = Math.round(subtotal * descPct);
+                const total = subtotal - descuento;
+
+                return {
+                    especie: 'perro',
+                    basePrice,
+                    adicionalManto,
+                    adicionalTratamiento,
+                    viaticoZona,
+                    descPct,
+                    descuento,
+                    subtotal,
+                    total,
+                    tamanoTxt: getSelectValue('mascota_tamano', ''),
+                    mantoTxt: getSelectValue('manto_estado', ''),
+                    tratamientoTxt: getSelectValue('tratamiento_servicio', ''),
+                    zonaTxt,
+                    rutinaTxt: getSelectValue('frecuencia_rutina', '')
+                };
+            }
         }
 
         async function submitAppointment(e) {
@@ -1458,24 +1578,43 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 if (data.success) {
                     showToast('Turno registrado en Odoo 19. Abriendo WhatsApp para confirmación instantánea...');
 
-                    // Generar mensaje formateado para confirmación por WhatsApp (Clean text - NO Emojis)
-                    let text = `RESERVA DE TURNO Y DIAGNOSTICO DE MANTO - ALMITAS PELUDAS\n`;
-                    text += `------------------------------------\n`;
-                    text += `Cliente: ${payload.dueno_nombre} (${payload.telefono})\n`;
-                    text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Mestizo'})\n`;
-                    text += `Tamaño: ${payload.mascota_tamano}\n`;
-                    text += `Estado Manto: ${payload.manto_estado}\n`;
-                    text += `Tratamiento: ${payload.tratamiento_servicio}\n`;
-                    text += `Plan de Rutina: ${payload.frecuencia_rutina}\n`;
-                    if (payload.manto_descripcion) text += `Notas Manto: ${payload.manto_descripcion}\n`;
-                    text += `Zona: ${payload.zona_atencion}\n`;
-                    text += `Fecha: ${payload.fecha_turno} (${payload.horario_turno})\n`;
-                    text += `Direccion: ${payload.direccion}\n\n`;
-                    text += `COTIZACION ESTIMADA:\n`;
-                    text += `- Presupuesto Base: $${payload.subtotal.toLocaleString('es-AR')}\n`;
-                    if (payload.descuento_aplicado > 0) text += `- Descuento Plan Recurrente: -$${payload.descuento_aplicado.toLocaleString('es-AR')}\n`;
-                    text += `TOTAL ESTIMADO: $${payload.total_cotizado.toLocaleString('es-AR')}\n\n`;
-                    text += `Solicito confirmación del turno y rutina por este medio.`;
+                    let text = ``;
+                    if (quote.especie === 'gato') {
+                        text = `RESERVA DE CAT SITTING Y CUIDADO FELINO (ROSSMARI) - ALMITAS PELUDAS\n`;
+                        text += `------------------------------------\n`;
+                        text += `Cliente: ${payload.dueno_nombre} (${payload.telefono})\n`;
+                        text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Mishi'})\n`;
+                        text += `Servicio: ${payload.tratamiento_servicio}\n`;
+                        text += `Cantidad: ${payload.mascota_tamano}\n`;
+                        text += `Plan / Frecuencia: ${payload.frecuencia_rutina}\n`;
+                        if (payload.manto_descripcion) text += `Notas Especiales: ${payload.manto_descripcion}\n`;
+                        text += `Zona: ${payload.zona_atencion}\n`;
+                        text += `Fecha: ${payload.fecha_turno} (${payload.horario_turno})\n`;
+                        text += `Direccion: ${payload.direccion}\n\n`;
+                        text += `COTIZACION ESTIMADA:\n`;
+                        text += `- Presupuesto Base: $${payload.subtotal.toLocaleString('es-AR')}\n`;
+                        if (payload.descuento_aplicado > 0) text += `- Descuento Pack Viajero: -$${payload.descuento_aplicado.toLocaleString('es-AR')}\n`;
+                        text += `TOTAL ESTIMADO: $${payload.total_cotizado.toLocaleString('es-AR')}\n\n`;
+                        text += `Solicito confirmación de la visita por Rossmari por este medio.`;
+                    } else {
+                        text = `RESERVA DE TURNO Y DIAGNOSTICO DE MANTO - ALMITAS PELUDAS\n`;
+                        text += `------------------------------------\n`;
+                        text += `Cliente: ${payload.dueno_nombre} (${payload.telefono})\n`;
+                        text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Mestizo'})\n`;
+                        text += `Tamaño: ${payload.mascota_tamano}\n`;
+                        text += `Estado Manto: ${payload.manto_estado}\n`;
+                        text += `Tratamiento: ${payload.tratamiento_servicio}\n`;
+                        text += `Plan de Rutina: ${payload.frecuencia_rutina}\n`;
+                        if (payload.manto_descripcion) text += `Notas Manto: ${payload.manto_descripcion}\n`;
+                        text += `Zona: ${payload.zona_atencion}\n`;
+                        text += `Fecha: ${payload.fecha_turno} (${payload.horario_turno})\n`;
+                        text += `Direccion: ${payload.direccion}\n\n`;
+                        text += `COTIZACION ESTIMADA:\n`;
+                        text += `- Presupuesto Base: $${payload.subtotal.toLocaleString('es-AR')}\n`;
+                        if (payload.descuento_aplicado > 0) text += `- Descuento Plan Recurrente: -$${payload.descuento_aplicado.toLocaleString('es-AR')}\n`;
+                        text += `TOTAL ESTIMADO: $${payload.total_cotizado.toLocaleString('es-AR')}\n\n`;
+                        text += `Solicito confirmación del turno por este medio.`;
+                    }
 
                     const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
                     setTimeout(() => window.open(waUrl, '_blank'), 600);
@@ -1560,11 +1699,12 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             }
         }
 
-        function showCopyTab(tabId) {
+        function showCopyTab(tabId, evt) {
             document.querySelectorAll('.copy-tab-content').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(tabId).style.display = 'block';
-            event.target.classList.add('active');
+            const target = evt ? evt.target : (window.event ? window.event.target : null);
+            if (target) target.classList.add('active');
         }
 
         function copyText(elementId) {
@@ -1608,7 +1748,7 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             renderCatalog();
 
             // Bind live reservation summary listeners (Peirano pattern)
-            const inputs = ['dueno_nombre', 'mascota_nombre', 'mascota_raza', 'direccion', 'zona_atencion', 'mascota_tamano', 'manto_estado', 'tratamiento_servicio', 'frecuencia_rutina', 'fecha_turno', 'horario_turno'];
+            const inputs = ['dueno_nombre', 'mascota_nombre', 'mascota_raza', 'direccion', 'zona_atencion', 'mascota_tamano', 'manto_estado', 'tratamiento_servicio', 'frecuencia_rutina', 'servicio_felino', 'cantidad_gatos', 'frecuencia_felina', 'fecha_turno', 'horario_turno'];
             inputs.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) {
