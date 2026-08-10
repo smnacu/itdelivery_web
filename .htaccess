@@ -12,11 +12,14 @@ DirectoryIndex index.php
 
     # 2. Enrutador Automático de Subdominios a Subcarpetas
     # ej: almitas.itdelivery.com.ar -> /almitas/
-    # ej: peirano.itdelivery.com.ar -> /peirano/
+    RewriteCond %{HTTP_HOST} ^almitas\.itdelivery\.com\.ar$ [NC]
+    RewriteCond %{REQUEST_URI} !^/almitas/
+    RewriteRule ^(.*)$ /almitas/$1 [L,QSA]
+
     RewriteCond %{HTTP_HOST} ^(?!www\.)([^.]+)\.itdelivery\.com\.ar$ [NC]
     RewriteCond %{DOCUMENT_ROOT}/%1 -d
     RewriteCond %{REQUEST_URI} !^/%1/
-    RewriteRule ^(.*)$ /%1/$1 [L]
+    RewriteRule ^(.*)$ /%1/$1 [L,QSA]
 
     # 3. Prevenir listar directorios por seguridad
     Options -Indexes

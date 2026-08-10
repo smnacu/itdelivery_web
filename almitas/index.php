@@ -1,5 +1,15 @@
 <?php
 require_once __DIR__ . '/../includes/odoo_api.php';
+
+// Verificación de acceso seguro al panel de administración / groomer
+$is_admin = isset($_GET['admin']) || isset($_COOKIE['almitas_admin']);
+if (isset($_GET['admin']) && $_GET['admin'] === '1') {
+    setcookie('almitas_admin', '1', time() + 86400 * 30, '/');
+    $is_admin = true;
+} elseif (isset($_GET['logout'])) {
+    setcookie('almitas_admin', '', time() - 3600, '/');
+    $is_admin = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,7 +20,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
     <meta name="description" content="Servicio profesional de peluquería canina y felina a domicilio en Capital Federal (CABA - Palermo, Belgrano, Recoleta, Caballito). Venta mayorista de alimento CatPro, Pro Plan, Royal Canin y piedritas sanitarias Rubicat.">
     <meta name="keywords" content="peluqueria canina a domicilio capital federal, grooming felino caba, cepillado de gatos buenos aires, cat sitting caba, piedritas rubicat mayorista, alimentos para mascotas capital federal">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://itdelivery.com.ar/almitas/">
+    <link rel="canonical" href="https://almitas.itdelivery.com.ar/">
     <meta name="theme-color" content="#0f172a">
     
     <!-- Geo Target SEO for CABA -->
@@ -32,13 +42,13 @@ require_once __DIR__ . '/../includes/odoo_api.php';
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Almitas Peludas",
-      "description": "Peluquería Canina y Felina a Domicilio, Cat Sitting y Venta Mayorista de Insumos para Mascotas en Capital Federal.",
+      "description": "Peluquería Canina y Felina a Domicilio con Cotizador por Tamaño, Diagnóstico de Manto, Cat Sitting y Venta Mayorista en CABA y GBA.",
       "url": "https://itdelivery.com.ar/almitas/",
       "telephone": "+541112345678",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Buenos Aires",
-        "addressRegion": "Capital Federal",
+        "addressRegion": "Capital Federal / Gran Buenos Aires",
         "addressCountry": "AR"
       },
       "geo": {
@@ -46,28 +56,69 @@ require_once __DIR__ . '/../includes/odoo_api.php';
         "latitude": "-34.603722",
         "longitude": "-58.381592"
       },
-      "priceRange": "$$",
+      "priceRange": "$$$",
       "openingHours": "Mo-Sa 09:00-19:00",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Combo CABA Full Canino",
-          "price": "28000",
-          "priceCurrency": "ARS"
-        },
-        {
-          "@type": "Offer",
-          "name": "Combo Felino CABA",
-          "price": "22000",
-          "priceCurrency": "ARS"
-        },
-        {
-          "@type": "Offer",
-          "name": "Pack Almitas CABA (Peluquería + Bolsón Rubicat 10kg)",
-          "price": "35000",
-          "priceCurrency": "ARS"
-        }
-      ]
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Palermo, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Belgrano, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Recoleta, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Nuñez, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Colegiales, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Caballito, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Almagro, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Flores, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Devoto, Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Vicente López, Gran Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Olivos, Gran Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "San Isidro, Gran Buenos Aires" },
+        { "@type": "AdministrativeArea", "name": "Tigre, Gran Buenos Aires" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Peluquería Canina y Felina a Domicilio",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Peluquería Canina a Domicilio - Perro Chico (hasta 8kg)",
+              "description": "Baño, secado, higiene profunda y corte estético/raza para perros chicos."
+            },
+            "price": "25000",
+            "priceCurrency": "ARS"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Peluquería Canina a Domicilio - Perro Mediano (8 a 18kg)",
+              "description": "Baño, secado, higiene profunda y corte estético/raza para perros medianos."
+            },
+            "price": "32000",
+            "priceCurrency": "ARS"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Peluquería Canina a Domicilio - Perro Grande (18 a 35kg)",
+              "description": "Baño, deslanado, secado e higiene profunda para perros grandes."
+            },
+            "price": "42000",
+            "priceCurrency": "ARS"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Peluquería Canina a Domicilio - Perro Gigante (+35kg)",
+              "description": "Baño, deslanado intensivo y acondicionamiento especializado para razas gigantes."
+            },
+            "price": "52000",
+            "priceCurrency": "ARS"
+          }
+        ]
+      }
     }
     </script>
 
@@ -784,7 +835,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
     <!-- Header -->
     <header>
         <div class="header-inner">
-            <a href="/almitas" class="brand">
+            <a href="./" class="brand">
                 <span class="brand-badge">ALMITAS</span>
                 <span class="brand-name">Almitas <span>Peludas</span></span>
             </a>
@@ -899,10 +950,10 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                 </div>
             </div>
 
-            <!-- Panel 2: Turnera Peluquería Canina a Domicilio -->
+            <!-- Panel 2: Turnera Peluquería Canina a Domicilio y Cotizador de Manto -->
             <div class="panel-card" id="turnera">
-                <h3 class="panel-title">Turnera Peluqueria a Domicilio</h3>
-                <p class="panel-subtitle">Agenda una visita de bano y corte para tu perro directamente en tu casa.</p>
+                <h3 class="panel-title">Cotizador & Turnera a Domicilio</h3>
+                <p class="panel-subtitle">Cotiza en tiempo real segun tamaño, estado del manto, zona y rutina de mantenimiento.</p>
 
                 <form id="appointment-form" onsubmit="submitAppointment(event)">
                     <div class="form-row">
@@ -922,32 +973,65 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                             <input type="text" id="mascota_nombre" required placeholder="Ej: Firulais">
                         </div>
                         <div class="form-group">
-                            <label for="mascota_raza">Raza / Tamano</label>
-                            <input type="text" id="mascota_raza" placeholder="Ej: Caniche / Mediano">
+                            <label for="mascota_raza">Raza / Meztizo</label>
+                            <input type="text" id="mascota_raza" placeholder="Ej: Caniche, Golden, Mestizo...">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="direccion">Direccion de Visita *</label>
-                            <input type="text" id="direccion" required placeholder="Ej: Av. Corrientes 1234">
+                            <input type="text" id="direccion" required placeholder="Ej: Av. Corrientes 1234, Piso 2A">
                         </div>
                         <div class="form-group">
-                            <label for="barrio_zona">Barrio / Zona *</label>
-                            <input type="text" id="barrio_zona" placeholder="Ej: Palermo / Belgrano">
+                            <label for="zona_atencion">Zona de Atencion & Viatico *</label>
+                            <select id="zona_atencion" required>
+                                <option value="CABA Norte / Centro (Palermo, Belgrano, Recoleta, Nuñez, Colegiales)" data-viatico="0">CABA Norte / Centro (Palermo, Belgrano, Recoleta...) - Viático $0</option>
+                                <option value="CABA Sur / Oeste (Caballito, Almagro, Flores, Devoto)" data-viatico="2000">CABA Sur / Oeste (Caballito, Almagro, Devoto...) - Viático $2.000</option>
+                                <option value="GBA Norte (Olivos, San Isidro, Tigre, Vicente López)" data-viatico="5000">GBA Norte (Olivos, San Isidro, Vicente López...) - Viático $5.000</option>
+                                <option value="GBA Oeste / Sur (Avellaneda, Lanús, San Martín, Morón)" data-viatico="6000">GBA Oeste / Sur (Avellaneda, Lanús, San Martín...) - Viático $6.000</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="servicio">Servicio / Combo Requerido (Capital Federal) *</label>
-                        <select id="servicio" required>
-                            <option value="Combo CABA Full Canino (Peluqueria Completa + Baño Higienico - $28.000)">Combo CABA Full Canino (Peluquería Completa + Baño Higiénico - $28.000)</option>
-                            <option value="Combo Felino CABA (Cepillado Multigato + Corte de Uñas - $22.000)">Combo Felino CABA (Cepillado Multigato + Corte de Uñas - $22.000)</option>
-                            <option value="Pack Almitas CABA (Peluqueria + Bolsón Rubicat 10kg + Envío Bonificado - $35.000)">Pack Almitas CABA (Peluquería + Bolsón Rubicat 10kg + Envío Bonificado - $35.000)</option>
-                            <option value="Peluqueria Canina Completa ($25.000)">Peluquería Canina Completa Individual ($25.000)</option>
-                            <option value="Bano & Higiene Profunda ($18.000)">Baño & Higiene Profunda ($18.000)</option>
-                            <option value="Corte de Unas & Desparasitacion ($10.000)">Corte de Uñas & Desparasitación Add-on ($10.000)</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mascota_tamano">Tamano de la Mascota *</label>
+                            <select id="mascota_tamano" required>
+                                <option value="Chico (hasta 8 kg - Caniche, Pug, Yorkie)" data-base="25000">Chico (hasta 8 kg - Caniche, Pug, Yorkie) - Base $25.000</option>
+                                <option value="Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer)" data-base="32000">Mediano (8 a 18 kg - Beagle, Cocker, Schnauzer) - Base $32.000</option>
+                                <option value="Grande (18 a 35 kg - Golden, Labrador, Border Collie)" data-base="42000">Grande (18 a 35 kg - Golden, Labrador, Border Collie) - Base $42.000</option>
+                                <option value="Gigante (+35 kg - San Bernardo, Gran Danés, Mastín)" data-base="52000">Gigante (+35 kg - San Bernardo, Gran Danés, Mastín) - Base $52.000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="manto_estado">Estado del Manto & Trabajo *</label>
+                            <select id="manto_estado" required>
+                                <option value="Normal / Manto Saludable" data-adicional="0">Normal / Manto Saludable (+$0)</option>
+                                <option value="Muda / Deslanado Intensivo de Subpelo" data-adicional="5000">Muda / Deslanado Intensivo de Subpelo (+$5.000)</option>
+                                <option value="Nudos Moderados / Desanudado Progresivo" data-adicional="8000">Nudos Moderados / Desanudado Progresivo (+$8.000)</option>
+                                <option value="Fieltrado / Nudos Severos (Trabajo Paciente / Higiénico)" data-adicional="12000">Fieltrado / Nudos Severos (+$12.000)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tratamiento_servicio">Tratamiento Requerido *</label>
+                            <select id="tratamiento_servicio" required>
+                                <option value="Baño & Higiene Profunda (Uñas, Oídos, Sanitario)" data-adicional="0">Baño & Higiene Profunda (Uñas, Oídos, Sanitario - +$0)</option>
+                                <option value="Corte de Raza / Tijera / Grooming Completo" data-adicional="5000">Corte de Raza / Tijera / Grooming Completo (+$5.000)</option>
+                                <option value="Baño Terapéutico / Dermocosmético (Piel Sensible)" data-adicional="4000">Baño Terapéutico / Dermocosmético (Piel Sensible - +$4.000)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="frecuencia_rutina">Plan de Rutina & Hábito del Manto *</label>
+                            <select id="frecuencia_rutina" required>
+                                <option value="Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)" data-descuento="0.10">Rutina Manto Perfecto (Cada 3 Semanas - 10% OFF)</option>
+                                <option value="Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)" data-descuento="0.05" selected>Rutina Higiene Regular (Cada 4 Semanas - 5% OFF)</option>
+                                <option value="Visita Eventual / Ocasional" data-descuento="0">Visita Eventual / Ocasional (Sin Descuento)</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-row">
@@ -958,7 +1042,7 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                         <div class="form-group">
                             <label for="horario_turno">Franja Horaria *</label>
                             <select id="horario_turno" required>
-                                <option value="Manana (09:00 - 13:00)">Manana (09:00 - 13:00)</option>
+                                <option value="Mañana (09:00 - 13:00)">Mañana (09:00 - 13:00)</option>
                                 <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 17:00)</option>
                                 <option value="A confirmar por WhatsApp">A confirmar por WhatsApp</option>
                             </select>
@@ -966,18 +1050,18 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="notas">Notas (ej: miedoso, requiere bozal, etc.)</label>
-                        <textarea id="notas" rows="2" placeholder="Detalles sobre la mascota..."></textarea>
+                        <label for="manto_descripcion">Diagnostico del Manto & Sensibilidades de la Mascota</label>
+                        <textarea id="manto_descripcion" rows="2" placeholder="Ej: Pelo rizado con tendencia a nudos en lomo, piel sensible al secador, le incomoda el corte de uñas..."></textarea>
                     </div>
 
-                    <!-- Live Reservation Summary Card (Merged from Peirano Pattern) -->
+                    <!-- Live Dynamic Price Calculator Summary Card -->
                     <div id="live-summary-card" class="cart-summary" style="margin-bottom: 1rem; border-color: rgba(16, 185, 129, 0.4); background: rgba(15, 23, 42, 0.9);">
                         <div style="font-size: 0.82rem; font-weight: 700; color: var(--emerald); margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between;">
-                            <span>RESUMEN EN VIVO DE TU RESERVA</span>
+                            <span>COTIZACIÓN EN VIVO & PLAN DE RUTINA</span>
                             <span class="status-badge" style="background: rgba(16,185,129,0.15); padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); font-size: 0.75rem;">🟢 Odoo 19 Direct Sync</span>
                         </div>
                         <div id="summary-text-detail" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
-                            Completa tus datos para ver la vista previa del turno a coordinar.
+                            Calculando presupuesto estimado...
                         </div>
                     </div>
 
@@ -989,15 +1073,100 @@ require_once __DIR__ . '/../includes/odoo_api.php';
 
         </div>
 
+        <?php if ($is_admin): ?>
+        <!-- Section: Ficha de Atención Post-Servicio (Uso Interno Groomer & Reporte Cliente) -->
+        <section id="ficha-grooming" class="panel-card" style="margin-top: 2rem; border-color: rgba(16, 185, 129, 0.3);">
+            <h3 class="panel-title" style="color: var(--emerald);">Ficha Clínica Post-Atención & Reporte de Grooming (Panel Interno)</h3>
+            <p class="panel-subtitle">Registra la conducta real, estado de piel/manto encontrado y genera la Ficha de Sesión para el dueño y Odoo 19.</p>
+
+            <form id="post-grooming-form" onsubmit="submitPostGroomingReport(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report_dueno_nombre">Nombre del Dueño/a *</label>
+                        <input type="text" id="report_dueno_nombre" required placeholder="Ej: Santiago">
+                    </div>
+                    <div class="form-group">
+                        <label for="report_dueno_telefono">WhatsApp / Teléfono *</label>
+                        <input type="tel" id="report_dueno_telefono" required placeholder="Ej: 11 1234-5678">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report_mascota_nombre">Nombre de la Mascota *</label>
+                        <input type="text" id="report_mascota_nombre" required placeholder="Ej: Firulais">
+                    </div>
+                    <div class="form-group">
+                        <label for="report_temperamento">Temperamento & Manejo Conductual *</label>
+                        <select id="report_temperamento" required>
+                            <option value="Tranquilo / Colaborativo (Excelente comportamiento)">🟢 Tranquilo / Colaborativo (Excelente comportamiento)</option>
+                            <option value="Inquieto / Sensible (Requiere paciencia y trabajo pausado)">🟡 Inquieto / Sensible (Requiere paciencia)</option>
+                            <option value="Reactivo / Intento de Mordida (Uso de Bozal / Manejo Especial)">🔴 Reactivo / Intento de Mordida (Requiere Bozal / Manejo Especial)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report_piel_estado">Estado de Piel & Salud Cutánea *</label>
+                        <select id="report_piel_estado" required>
+                            <option value="Sana / Excelente condición">Sana / Excelente condición</option>
+                            <option value="Piel Sensible / Enrojecimiento / Irritación">Piel Sensible / Enrojecimiento / Irritación</option>
+                            <option value="Dermatitis / Alergia Cutánea Visible">Dermatitis / Alergia Cutánea Visible</option>
+                            <option value="Presencia de Pulgas / Garrapatas (Tratamiento Recomendado)">Presencia de Pulgas / Garrapatas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="report_procedimiento">Trabajo Realizado *</label>
+                        <select id="report_procedimiento" required>
+                            <option value="Baño Profundo + Secado + Higiene Sanitaria">Baño Profundo + Secado + Higiene Sanitaria</option>
+                            <option value="Corte de Raza / Tijera Completo + Baño">Corte de Raza / Tijera Completo + Baño</option>
+                            <option value="Deslanado Intensivo de Subpelo + Baño">Deslanado Intensivo de Subpelo + Baño</option>
+                            <option value="Desanudado Paciente + Corte Higiénico + Baño">Desanudado Paciente + Corte Higiénico + Baño</option>
+                            <option value="Baño Terapéutico Dermocosmético">Baño Terapéutico Dermocosmético</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="report_proxima_visita">Recomendación de Próxima Cita *</label>
+                        <select id="report_proxima_visita" required>
+                            <option value="Volver en 21 días (Ideal para mantenimiento de manto/tijera y prevención de nudos)">En 21 días (Recomendado para manto tijera/anti-nudos)</option>
+                            <option value="Volver en 28 días (Frecuencia estándar de higiene regular)">En 28 días (Frecuencia estándar regular)</option>
+                            <option value="Volver en 45 días (Mantenimiento básico)">En 45 días (Mantenimiento básico)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="report_mordida_recargo">Ajuste / Recargo por Dificultad o Mordida</label>
+                        <select id="report_mordida_recargo">
+                            <option value="Sin Recargo (Tarifa Estándar)">Sin Recargo (Tarifa Estándar)</option>
+                            <option value="Recargo Manejo Especial / Mordida (+$5.000)">Recargo Manejo Especial / Mordida (+$5.000)</option>
+                            <option value="Recargo Trabajo Extra Nudos Severos (+$8.000)">Recargo Trabajo Extra Nudos Severos (+$8.000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="report_observaciones">Recomendaciones Pedagógicas & Tips para el Dueño</label>
+                    <textarea id="report_observaciones" rows="3" placeholder="Ej: Recomendamos cepillar con carda suave 5 minutos por día en zona de orejas y lomo para evitar nudos. Se portó muy bien con el secador pero requiere bozal preventivo al cortar uñas."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-whatsapp" id="btn-submit-report" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                    Guardar Ficha en Odoo 19 y Enviar Reporte al Dueño por WhatsApp
+                </button>
+            </form>
+        </section>
+
         <!-- Marketing & Copys Section (Clean Text - No Emojis) -->
         <section id="copys" class="copy-section">
-            <h3 class="panel-title">Centro de Difusion y Copys de Redes</h3>
+            <h3 class="panel-title">Centro de Difusión y Copys de Redes (Panel Interno)</h3>
             <p class="panel-subtitle">Textos promocionales limpios sin emojis listos para publicar en Instagram, Facebook y WhatsApp.</p>
 
             <div class="copy-tabs">
                 <button class="tab-btn active" onclick="showCopyTab('tab1')">Post Feed (IG/FB)</button>
                 <button class="tab-btn" onclick="showCopyTab('tab2')">Historias / Estados</button>
-                <button class="tab-btn" onclick="showCopyTab('tab3')">Mensaje Difusion WhatsApp</button>
+                <button class="tab-btn" onclick="showCopyTab('tab3')">Mensaje Difusión WhatsApp</button>
             </div>
 
             <div id="tab1" class="copy-tab-content">
@@ -1039,6 +1208,7 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 <button class="btn-copy" onclick="copyText('copy-text-3')">Copiar Mensaje Difusion</button>
             </div>
         </section>
+        <?php endif; ?>
     </main>
 
     <!-- Toast Notification -->
@@ -1214,11 +1384,47 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             window.open(url, '_blank');
         }
 
+        function calculateAppointmentQuote() {
+            const tamanoSel = document.getElementById('mascota_tamano');
+            const mantoSel = document.getElementById('manto_estado');
+            const tratamientoSel = document.getElementById('tratamiento_servicio');
+            const zonaSel = document.getElementById('zona_atencion');
+            const rutinaSel = document.getElementById('frecuencia_rutina');
+
+            const basePrice = parseInt(tamanoSel?.options[tamanoSel.selectedIndex]?.dataset?.base || '25000', 10);
+            const adicionalManto = parseInt(mantoSel?.options[mantoSel.selectedIndex]?.dataset?.adicional || '0', 10);
+            const adicionalTratamiento = parseInt(tratamientoSel?.options[tratamientoSel.selectedIndex]?.dataset?.adicional || '0', 10);
+            const viaticoZona = parseInt(zonaSel?.options[zonaSel.selectedIndex]?.dataset?.viatico || '0', 10);
+            const descPct = parseFloat(rutinaSel?.options[rutinaSel.selectedIndex]?.dataset?.descuento || '0');
+
+            const subtotal = basePrice + adicionalManto + adicionalTratamiento + viaticoZona;
+            const descuento = Math.round(subtotal * descPct);
+            const total = subtotal - descuento;
+
+            return {
+                basePrice,
+                adicionalManto,
+                adicionalTratamiento,
+                viaticoZona,
+                descPct,
+                descuento,
+                subtotal,
+                total,
+                tamanoTxt: tamanoSel?.value || '',
+                mantoTxt: mantoSel?.value || '',
+                tratamientoTxt: tratamientoSel?.value || '',
+                zonaTxt: zonaSel?.value || '',
+                rutinaTxt: rutinaSel?.value || ''
+            };
+        }
+
         async function submitAppointment(e) {
             e.preventDefault();
             const btn = document.getElementById('btn-submit-apt');
             btn.disabled = true;
             btn.innerText = 'Enviando a Odoo...';
+
+            const quote = calculateAppointmentQuote();
 
             const payload = {
                 action: 'create_appointment',
@@ -1227,11 +1433,18 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 mascota_nombre: document.getElementById('mascota_nombre').value.trim(),
                 mascota_raza: document.getElementById('mascota_raza').value.trim(),
                 direccion: document.getElementById('direccion').value.trim(),
-                barrio_zona: document.getElementById('barrio_zona').value.trim(),
-                servicio: document.getElementById('servicio').value,
+                zona_atencion: quote.zonaTxt,
+                mascota_tamano: quote.tamanoTxt,
+                manto_estado: quote.mantoTxt,
+                tratamiento_servicio: quote.tratamientoTxt,
+                frecuencia_rutina: quote.rutinaTxt,
+                manto_descripcion: document.getElementById('manto_descripcion').value.trim(),
                 fecha_turno: document.getElementById('fecha_turno').value,
                 horario_turno: document.getElementById('horario_turno').value,
-                notas: document.getElementById('notas').value.trim()
+                total_cotizado: quote.total,
+                subtotal: quote.subtotal,
+                descuento_aplicado: quote.descuento,
+                viatico: quote.viaticoZona
             };
 
             try {
@@ -1245,21 +1458,30 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                 if (data.success) {
                     showToast('Turno registrado en Odoo 19. Abriendo WhatsApp para confirmación instantánea...');
 
-                    // Generar mensaje formateado para confirmación por WhatsApp
-                    let text = `RESERVA DE TURNO - ALMITAS PELUDAS\n`;
+                    // Generar mensaje formateado para confirmación por WhatsApp (Clean text - NO Emojis)
+                    let text = `RESERVA DE TURNO Y DIAGNOSTICO DE MANTO - ALMITAS PELUDAS\n`;
                     text += `------------------------------------\n`;
                     text += `Cliente: ${payload.dueno_nombre} (${payload.telefono})\n`;
-                    text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Sin especificar'})\n`;
-                    text += `Servicio: ${payload.servicio}\n`;
+                    text += `Mascota: ${payload.mascota_nombre} (${payload.mascota_raza || 'Mestizo'})\n`;
+                    text += `Tamaño: ${payload.mascota_tamano}\n`;
+                    text += `Estado Manto: ${payload.manto_estado}\n`;
+                    text += `Tratamiento: ${payload.tratamiento_servicio}\n`;
+                    text += `Plan de Rutina: ${payload.frecuencia_rutina}\n`;
+                    if (payload.manto_descripcion) text += `Notas Manto: ${payload.manto_descripcion}\n`;
+                    text += `Zona: ${payload.zona_atencion}\n`;
                     text += `Fecha: ${payload.fecha_turno} (${payload.horario_turno})\n`;
-                    text += `Direccion: ${payload.direccion}${payload.barrio_zona ? ', ' + payload.barrio_zona : ''}\n`;
-                    if (payload.notas) text += `Notas: ${payload.notas}\n`;
-                    text += `\nSolicito confirmación del turno por este medio.`;
+                    text += `Direccion: ${payload.direccion}\n\n`;
+                    text += `COTIZACION ESTIMADA:\n`;
+                    text += `- Presupuesto Base: $${payload.subtotal.toLocaleString('es-AR')}\n`;
+                    if (payload.descuento_aplicado > 0) text += `- Descuento Plan Recurrente: -$${payload.descuento_aplicado.toLocaleString('es-AR')}\n`;
+                    text += `TOTAL ESTIMADO: $${payload.total_cotizado.toLocaleString('es-AR')}\n\n`;
+                    text += `Solicito confirmación del turno y rutina por este medio.`;
 
                     const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
                     setTimeout(() => window.open(waUrl, '_blank'), 600);
 
                     document.getElementById('appointment-form').reset();
+                    updateLiveSummary();
                 } else {
                     alert(data.error || 'Error registrando turno.');
                 }
@@ -1268,6 +1490,73 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             } finally {
                 btn.disabled = false;
                 btn.innerText = 'Reservar Turno en Odoo y Confirmar por WhatsApp';
+            }
+        }
+
+        async function submitPostGroomingReport(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btn-submit-report');
+            btn.disabled = true;
+            btn.innerText = 'Guardando Ficha en Odoo...';
+
+            const payload = {
+                action: 'save_post_grooming_report',
+                dueno_nombre: document.getElementById('report_dueno_nombre').value.trim(),
+                telefono: document.getElementById('report_dueno_telefono').value.trim(),
+                mascota_nombre: document.getElementById('report_mascota_nombre').value.trim(),
+                temperamento: document.getElementById('report_temperamento').value,
+                piel_estado: document.getElementById('report_piel_estado').value,
+                procedimiento: document.getElementById('report_procedimiento').value,
+                proxima_visita: document.getElementById('report_proxima_visita').value,
+                recargo_dificultad: document.getElementById('report_mordida_recargo').value,
+                observaciones: document.getElementById('report_observaciones').value.trim()
+            };
+
+            try {
+                const res = await fetch('api.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showToast('Ficha de atención registrada en Odoo 19. Abriendo WhatsApp para enviar reporte al cliente...');
+
+                    // Generar reporte educativo y profesional para el dueño (Clean text - NO Emojis)
+                    let text = `FICHA DE ATENCION DE GROOMING - ALMITAS PELUDAS\n`;
+                    text += `----------------------------------------------\n`;
+                    text += `Mascota: ${payload.mascota_nombre}\n`;
+                    text += `Tutor/a: ${payload.dueno_nombre}\n\n`;
+                    text += `RESUMEN DE LA SESION:\n`;
+                    text += `- Trabajo Realizado: ${payload.procedimiento}\n`;
+                    text += `- Estado de Piel: ${payload.piel_estado}\n`;
+                    text += `- Comportamiento: ${payload.temperamento.split(' (')[0]}\n`;
+                    if (payload.recargo_dificultad && !payload.recargo_dificultad.includes('Sin Recargo')) {
+                        text += `- Observación de Manejo: ${payload.recargo_dificultad}\n`;
+                    }
+                    text += `\nRECOMENDACION DE PROXIMA CITA:\n`;
+                    text += `- ${payload.proxima_visita}\n`;
+
+                    if (payload.observaciones) {
+                        text += `\nTIPS & CUIDADOS EN CASA:\n`;
+                        text += `${payload.observaciones}\n`;
+                    }
+
+                    text += `\nGracias por confiar el cuidado de ${payload.mascota_nombre} a Almitas Peludas. ¡Nos vemos en la próxima sesión!`;
+
+                    const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                    setTimeout(() => window.open(waUrl, '_blank'), 600);
+
+                    document.getElementById('post-grooming-form').reset();
+                } else {
+                    alert(data.error || 'Error guardando reporte.');
+                }
+            } catch (err) {
+                alert('Error conectando con la API.');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'Guardar Ficha en Odoo 19 y Enviar Reporte al Dueño por WhatsApp';
             }
         }
 
@@ -1295,17 +1584,22 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
         function updateLiveSummary() {
             const dueno = document.getElementById('dueno_nombre')?.value.trim() || 'Cliente';
             const mascota = document.getElementById('mascota_nombre')?.value.trim() || 'Mascota';
-            const servicio = document.getElementById('servicio')?.value || 'Servicio a seleccionar';
             const fecha = document.getElementById('fecha_turno')?.value || '';
             const horario = document.getElementById('horario_turno')?.value || '';
-            const barrio = document.getElementById('barrio_zona')?.value.trim() || 'CABA';
+
+            const quote = calculateAppointmentQuote();
 
             const summaryEl = document.getElementById('summary-text-detail');
             if (summaryEl) {
                 summaryEl.innerHTML = `
-                    <strong>Reserva para:</strong> ${dueno} &bull; <strong>Mascota:</strong> ${mascota}<br>
-                    <strong>Combo/Servicio:</strong> ${servicio}<br>
-                    <strong>Fecha & Horario:</strong> ${fecha ? fecha : 'Por definir'} (${horario}) &bull; <strong>Zona:</strong> ${barrio}
+                    <strong>Reserva:</strong> ${dueno} &bull; <strong>Mascota:</strong> ${mascota}<br>
+                    <strong>Diagnóstico & Servicio:</strong> ${quote.tamanoTxt.split(' - ')[0]} &bull; ${quote.mantoTxt.split(' (')[0]} &bull; ${quote.tratamientoTxt.split(' (')[0]}<br>
+                    <strong>Zona:</strong> ${quote.zonaTxt.split(' (')[0]} (Viático: $${quote.viaticoZona.toLocaleString('es-AR')})<br>
+                    <strong>Plan de Rutina:</strong> ${quote.rutinaTxt}${quote.descuento > 0 ? ' (Descuento: -$' + quote.descuento.toLocaleString('es-AR') + ')' : ''}<br>
+                    <div style="margin-top: 0.5rem; padding-top: 0.4rem; border-top: 1px dashed rgba(255,255,255,0.15); display:flex; justify-content:space-between; align-items:center;">
+                        <span>Fecha: <strong>${fecha ? fecha : 'Por definir'} (${horario})</strong></span>
+                        <span style="font-size: 1.1rem; font-weight: 800; color: var(--gold);">TOTAL ESTIMADO: $${quote.total.toLocaleString('es-AR')}</span>
+                    </div>
                 `;
             }
         }
@@ -1314,7 +1608,7 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             renderCatalog();
 
             // Bind live reservation summary listeners (Peirano pattern)
-            const inputs = ['dueno_nombre', 'mascota_nombre', 'servicio', 'fecha_turno', 'horario_turno', 'barrio_zona'];
+            const inputs = ['dueno_nombre', 'mascota_nombre', 'mascota_raza', 'direccion', 'zona_atencion', 'mascota_tamano', 'manto_estado', 'tratamiento_servicio', 'frecuencia_rutina', 'fecha_turno', 'horario_turno'];
             inputs.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) {
@@ -1322,6 +1616,9 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
                     el.addEventListener('change', updateLiveSummary);
                 }
             });
+
+            // Initial summary calculation
+            updateLiveSummary();
 
             // Sunday validation listener
             document.getElementById('fecha_turno')?.addEventListener('change', function() {

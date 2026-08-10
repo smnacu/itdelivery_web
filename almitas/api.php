@@ -154,24 +154,43 @@ if ($action === 'create_appointment') {
             COMPANY['Almitas Peludas']
         );
 
-        $lead_desc = "TURNO PELUQUERIA CANINA A DOMICILIO\n"
-                   . "----------------------------------------\n"
+        $mascota_tamano  = $data['mascota_tamano'] ?? 'Chico';
+        $manto_estado    = $data['manto_estado'] ?? 'Normal';
+        $tratamiento     = $data['tratamiento_servicio'] ?? 'Baño & Higiene';
+        $zona_atencion   = $data['zona_atencion'] ?? 'CABA';
+        $frecuencia      = $data['frecuencia_rutina'] ?? 'Rutina 4 Semanas';
+        $manto_notas     = $data['manto_descripcion'] ?? '';
+        $total_cotizado  = $data['total_cotizado'] ?? 0;
+        $descuento       = $data['descuento_aplicado'] ?? 0;
+
+        $lead_desc = "TURNO PELUQUERIA A DOMICILIO & DIAGNOSTICO DE MANTO\n"
+                   . "--------------------------------------------------\n"
                    . "Cliente: $dueno_nombre ($telefono)\n"
-                   . "Mascota: {$data['mascota_nombre']} ({$data['mascota_raza']})\n"
-                   . "Servicio: {$data['servicio']}\n"
-                   . "Fecha: $fecha_turno ({$data['horario_turno']})\n"
-                   . "Direccion: $direccion\n";
+                   . "Mascota: {$data['mascota_nombre']} (" . ($data['mascota_raza'] ?: 'Mestizo') . ")\n"
+                   . "Tamaño: $mascota_tamano\n"
+                   . "Estado del Manto: $manto_estado\n"
+                   . "Tratamiento: $tratamiento\n"
+                   . "Plan de Rutina / Hábito: $frecuencia\n"
+                   . ($manto_notas ? "Notas del Manto: $manto_notas\n" : "")
+                   . "Zona & Viático: $zona_atencion\n"
+                   . "Fecha Turno: $fecha_turno ({$data['horario_turno']})\n"
+                   . "Dirección: $direccion\n\n"
+                   . "DESGLOSE DE COTIZACION:\n"
+                   . "- Subtotal: $" . number_format($data['subtotal'] ?? $total_cotizado, 0, ',', '.') . "\n"
+                   . ($descuento > 0 ? "- Descuento Rutina Recurrente: -$" . number_format($descuento, 0, ',', '.') . "\n" : "")
+                   . "TOTAL FINAL COTIZADO: $" . number_format($total_cotizado, 0, ',', '.') . "\n";
 
         $lead_id = odoo(
             'crm.lead',
             'create',
             [[
-                'name'         => "Turno Peluqueria: {$data['mascota_nombre']} - $fecha_turno",
-                'partner_id'   => $partner_id,
-                'contact_name' => $dueno_nombre,
-                'phone'        => $telefono,
-                'description'  => $lead_desc,
-                'company_id'   => COMPANY['Almitas Peludas'],
+                'name'             => "Turno Manto: {$data['mascota_nombre']} - $" . number_format($total_cotizado, 0, ',', '.') . " - $fecha_turno",
+                'partner_id'       => $partner_id,
+                'contact_name'     => $dueno_nombre,
+                'phone'            => $telefono,
+                'expected_revenue' => $total_cotizado,
+                'description'      => $lead_desc,
+                'company_id'       => COMPANY['Almitas Peludas'],
             ]],
             [],
             COMPANY['Almitas Peludas']
@@ -262,6 +281,72 @@ if ($action === 'create_wholesale_order') {
         echo json_encode([
             'success'  => true,
             'message'  => 'Pedido guardado en cola de alta disponibilidad.',
+            'queue_id' => $queue_id
+        ]);
+    }
+    exit;
+}
+
+if ($action === 'save_post_grooming_report') {
+    $dueno_nombre   = trim($data['dueno_nombre'] ?? '');
+    $telefono       = trim($data['telefono'] ?? '');
+    $mascota_nombre = trim($data['mascota_nombre'] ?? '');
+
+    if (empty($dueno_nombre) || empty($telefono) || empty($mascota_nombre)) {
+        echo json_encode(['success' => false, 'error' => 'Faltan datos obligatorios del reporte.']);
+        exit;
+    }
+
+    $queue_id = enqueue_task('save_post_grooming_report', $data);
+
+    try {
+        $partner_id = odoo(
+            'res.partner',
+            'create',
+            [[
+                'name'       => $dueno_nombre,
+                'phone'      => $telefono,
+                'company_id' => COMPANY['Almitas Peludas'],
+            ]],
+            [],
+            COMPANY['Almitas Peludas']
+        );
+
+        $report_desc = "HISTORIA CLINICA & FICHA POST-ATENCION GROOMING\n"
+                     . "--------------------------------------------------\n"
+                     . "Mascota: $mascota_nombre | Dueño: $dueno_nombre ($telefono)\n"
+                     . "Temperamento: {$data['temperamento']}\n"
+                     . "Estado Piel: {$data['piel_estado']}\n"
+                     . "Procedimiento: {$data['procedimiento']}\n"
+                     . "Ajuste Dificultad: {$data['recargo_dificultad']}\n"
+                     . "Próxima Cita Recomendada: {$data['proxima_visita']}\n"
+                     . (!empty($data['observaciones']) ? "Observaciones / Tips: {$data['observaciones']}\n" : "");
+
+        $lead_id = odoo(
+            'crm.lead',
+            'create',
+            [[
+                'name'         => "Ficha Clínica: $mascota_nombre - Conducta: " . explode(' ', $data['temperamento'])[0] . " - " . date('Y-m-d'),
+                'partner_id'   => $partner_id,
+                'contact_name' => $dueno_nombre,
+                'phone'        => $telefono,
+                'description'  => $report_desc,
+                'company_id'   => COMPANY['Almitas Peludas'],
+            ]],
+            [],
+            COMPANY['Almitas Peludas']
+        );
+
+        echo json_encode([
+            'success'  => true,
+            'message'  => 'Ficha post-atención registrada con éxito en Odoo 19.',
+            'queue_id' => $queue_id,
+            'lead_id'  => $lead_id
+        ]);
+    } catch (Throwable $e) {
+        echo json_encode([
+            'success'  => true,
+            'message'  => 'Ficha guardada en cola local fail-safe.',
             'queue_id' => $queue_id
         ]);
     }
