@@ -11,7 +11,10 @@ DirectoryIndex index.php
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # 2. Enrutador Automático de Subdominios a Subcarpetas
-    # ej: almitas.itdelivery.com.ar -> /almitas/
+    # Bypass de la página de cortesía predeterminada de Ferozo (index.html)
+    RewriteCond %{HTTP_HOST} ^almitas\.itdelivery\.com\.ar$ [NC]
+    RewriteRule ^(index\.html)?$ /almitas/index.php [L,QSA]
+
     RewriteCond %{HTTP_HOST} ^almitas\.itdelivery\.com\.ar$ [NC]
     RewriteCond %{REQUEST_URI} !^/almitas/
     RewriteRule ^(.*)$ /almitas/$1 [L,QSA]
