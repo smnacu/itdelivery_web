@@ -965,6 +965,17 @@ require_once __DIR__ . '/../includes/odoo_api.php';
                         <textarea id="notas" rows="2" placeholder="Detalles sobre la mascota..."></textarea>
                     </div>
 
+                    <!-- Live Reservation Summary Card (Merged from Peirano Pattern) -->
+                    <div id="live-summary-card" class="cart-summary" style="margin-bottom: 1rem; border-color: rgba(16, 185, 129, 0.4); background: rgba(15, 23, 42, 0.9);">
+                        <div style="font-size: 0.82rem; font-weight: 700; color: var(--emerald); margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between;">
+                            <span>RESUMEN EN VIVO DE TU RESERVA</span>
+                            <span class="status-badge" style="background: rgba(16,185,129,0.15); padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); font-size: 0.75rem;">🟢 Odoo 19 Direct Sync</span>
+                        </div>
+                        <div id="summary-text-detail" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+                            Completa tus datos para ver la vista previa del turno a coordinar.
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn-primary btn-whatsapp" id="btn-submit-apt">
                         Reservar Turno en Odoo y Confirmar por WhatsApp
                     </button>
@@ -1268,7 +1279,48 @@ Decinos que marca y presentacion usas y te pasamos el precio actualizado.</div>
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        document.addEventListener('DOMContentLoaded', renderCatalog);
+        function updateLiveSummary() {
+            const dueno = document.getElementById('dueno_nombre')?.value.trim() || 'Cliente';
+            const mascota = document.getElementById('mascota_nombre')?.value.trim() || 'Mascota';
+            const servicio = document.getElementById('servicio')?.value || 'Servicio a seleccionar';
+            const fecha = document.getElementById('fecha_turno')?.value || '';
+            const horario = document.getElementById('horario_turno')?.value || '';
+            const barrio = document.getElementById('barrio_zona')?.value.trim() || 'CABA';
+
+            const summaryEl = document.getElementById('summary-text-detail');
+            if (summaryEl) {
+                summaryEl.innerHTML = `
+                    <strong>Reserva para:</strong> ${dueno} &bull; <strong>Mascota:</strong> ${mascota}<br>
+                    <strong>Combo/Servicio:</strong> ${servicio}<br>
+                    <strong>Fecha & Horario:</strong> ${fecha ? fecha : 'Por definir'} (${horario}) &bull; <strong>Zona:</strong> ${barrio}
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog();
+
+            // Bind live reservation summary listeners (Peirano pattern)
+            const inputs = ['dueno_nombre', 'mascota_nombre', 'servicio', 'fecha_turno', 'horario_turno', 'barrio_zona'];
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', updateLiveSummary);
+                    el.addEventListener('change', updateLiveSummary);
+                }
+            });
+
+            // Sunday validation listener
+            document.getElementById('fecha_turno')?.addEventListener('change', function() {
+                if (!this.value) return;
+                const chosenDate = new Date(this.value + 'T00:00:00');
+                if (chosenDate.getDay() === 0) { // 0 = Domingo
+                    alert('Atención: Los domingos no realizamos atención a domicilio. Por favor selecciona una fecha de lunes a sábado.');
+                    this.value = '';
+                    updateLiveSummary();
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+# Ignore dynamic runtime data containing customer PII
+storage/queue_data.json
+
+# Local scripts
+*.py
