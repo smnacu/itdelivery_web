@@ -28,13 +28,14 @@ define('ODOO_API_KEY', getenv('ODOO_API_KEY') ?: (defined('ENV_ODOO_API_KEY') ? 
  * 8. Cohoo             (Outlet Comercial + Tratado Envases Plásticos Comuna 12)
  */
 const COMPANY = [
-    // ── Prioritarios ──────────────────────────────────────────────────────────
-    'ITDelivery'           => 2,  // Matriz ERP & Consultoría
-    'Karioka'              => 1,  // Eventos & Música
+    // ── Catálogo Real de Compañías en Odoo 19 Enterprise ──────────────────────
+    'Karioka'              => 1,  // Productora Musical & Eventos (Karioka.ok)
+    'ITDelivery'           => 2,  // Matriz Consultoría IT & ERP
+    'Cursos del Oeste'     => 3,  // E-learning & Capacitación
+    'LoopLab'              => 4,  // Cursos Inglés con IA
+    'Santi Nacu'           => 5,  // Servicios Personales & Marca Personal
     'Almitas Peludas'      => 6,  // Estética Canina & Mayorista Morquis
-    'LoopLab'              => 4,  // Cursos Inglés IA
-    'Santi Nacu'           => 5,  // Servicios Personales
-    'Cursos del Oeste'     => 3,  // Ser-Nac / E-learning
+    'Consorcio Escalada'   => 7,  // Consorcio Escalada 4265 Torres 3 y 4
 ];
 
 function odoo(string $model, string $method, array $args = [], array $kwargs = [], int $company = 1): mixed
