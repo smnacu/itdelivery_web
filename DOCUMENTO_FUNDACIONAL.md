@@ -61,16 +61,25 @@ ITDelivery administra y respalda tecnológicamente el portfolio multi-tenancy en
 | Compañía / Marca | Rubro / Enfoque | Tenancy Odoo |
 |---|---|---|
 | **ITDelivery** | Consultoría IT, ERP Matriz, Cloud & IA | Company ID: 2 (Matriz) |
+| **Electro Iván** | Electromecánica, Taller POS & E-commerce | Company ID: 8 |
 | **Almitas Peludas** | Estética Canina & Mayorista Morquis | Company ID: 6 |
 | **LoopLab** | EdTech / Capacitación en Inglés con IA | Company ID: 4 |
-| **Electro Iván** | Servicios Electromecánicos & Taller | Company ID: 1 |
 | **Cursos del Oeste** | E-learning & Capacitación Profesional | Company ID: 3 |
+| **Karioka** | Productora Musical & Eventos | Company ID: 1 |
 | **Cohoo** | Outlet Comercial & Tratado Envases Comuna 12 | Comercial Outlet |
-| **Karioka** | Productora Musical & Eventos | Entretenimiento |
 
 ---
 
-## 4. Sistema de Diseño (Brand & UI System)
+## 4. Caso de Éxito de Portfolio: Electro Iván (MSP / Headless ERP)
+
+**Electro Iván** opera bajo el modelo **Headless MSP** administrado por ITDelivery:
+- **E-commerce & Catálogo Técnico**: Presentación de motores, bombas (Czerweny, ESPA) con autoloader PSR-4 nativo y patrón `ProductRepository`.
+- **Panel Kiosk Taller POS (6 Módulos)**: Interfaces táctiles optimizadas para taller (Recepción, Stock, Balance, Personal, Alertas de Garantía a 90 días).
+- **Modelo de Negocio**: ITDelivery cobra un abono mensual de mantenimiento IT e infraestructura, sirviendo las consultas al WhatsApp de Electro Iván sin gastar licencias adicionales de usuario en Odoo.
+
+---
+
+## 5. Sistema de Diseño (Brand & UI System)
 
 ### Paleta de Colores Corporativa
 - **Fondo Principal (Obsidian)**: `#090d16` (Profundo, moderno, enfocado).
@@ -86,9 +95,9 @@ ITDelivery administra y respalda tecnológicamente el portfolio multi-tenancy en
 
 ---
 
-## 5. Principios Operativos & Filosofía Tecnológica
+## 6. Principios Operativos & Filosofía Tecnológica
 
 1. **Patrón Odoo-Centric**: Cero dependencia de terceros. Los leads se capturan directamente en `crm.lead` de Odoo 19 via JSON-RPC y las comunicaciones utilizan Deep Links (`wa.me`) y plantillas SMTP propias (`mail.template`).
-2. **Blindaje & Seguridad Integrada**: Filtros Honeypot invisibles, Time-traps anti-bot, Rate-Limiting por sesión y encabezados HTTP strictly (`X-Frame-Options`, `X-Content-Type-Options`).
+2. **Blindaje & Seguridad Integrada**: Filtros Honeypot invisibles, Time-traps anti-bot, Rate-Limiting por sesión y encabezados HTTP estrictos (`X-Frame-Options`, `X-Content-Type-Options`).
 3. **Despliegues Automáticos por Git SSH**: Cero FTPs manuales. Flujo estructurado: `git commit` -> `git push origin main` -> Deploy automático en Ferozo mediante SSH Deploy Keys.
 4. **Cimientos sobre Inmediatez (Solid Foundations)**: Patrones de diseño limpios, estructuras escalables y documentación previa antes de codificar.
