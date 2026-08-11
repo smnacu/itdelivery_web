@@ -98,9 +98,16 @@ if (isset($_GET['admin']) && $_GET['admin'] === '1') {
             display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
         }
 
-        .brand-icon {
-            font-size: 1.6rem;
-            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+        .brand-logo-img {
+            height: 44px; width: 44px; border-radius: 50%; object-fit: cover;
+            border: 2px solid var(--gold);
+            filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.45));
+            transition: var(--transition);
+        }
+
+        .brand:hover .brand-logo-img {
+            transform: scale(1.06);
+            border-color: #ffffff;
         }
 
         .brand-name {
@@ -418,7 +425,7 @@ if (isset($_GET['admin']) && $_GET['admin'] === '1') {
     <header>
         <div class="header-inner">
             <a href="./" class="brand">
-                <span class="brand-icon">🐾</span>
+                <img src="assets/logo_almitas.jpg" alt="Logo Almitas Peludas" class="brand-logo-img" onerror="this.style.display='none'">
                 <span class="brand-name">Almitas <span>Peludas</span></span>
             </a>
             <nav>
