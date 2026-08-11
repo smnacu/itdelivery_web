@@ -19,6 +19,13 @@ DirectoryIndex index.php
     RewriteCond %{REQUEST_URI} !^/almitas/
     RewriteRule ^(.*)$ /almitas/$1 [L,QSA]
 
+    RewriteCond %{HTTP_HOST} ^pagani\.itdelivery\.com\.ar$ [NC]
+    RewriteRule ^(index\.html)?$ /pagani/index.php [L,QSA]
+
+    RewriteCond %{HTTP_HOST} ^pagani\.itdelivery\.com\.ar$ [NC]
+    RewriteCond %{REQUEST_URI} !^/pagani/
+    RewriteRule ^(.*)$ /pagani/$1 [L,QSA]
+
     RewriteCond %{HTTP_HOST} ^(?!www\.)([^.]+)\.itdelivery\.com\.ar$ [NC]
     RewriteCond %{DOCUMENT_ROOT}/%1 -d
     RewriteCond %{REQUEST_URI} !^/%1/
