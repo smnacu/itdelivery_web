@@ -997,6 +997,10 @@ Estamos coordinando el pedido de alimentos y productos de higiene de esta semana
             }
         }
 
+        function getSalePrice(costPrice) {
+            return Math.round(costPrice * 1.35);
+        }
+
         function filterCategory(cat, element) {
             currentCategory = cat;
             document.querySelectorAll('.category-chips .chip').forEach(c => c.classList.remove('active'));
@@ -1026,7 +1030,8 @@ Estamos coordinando el pedido de alimentos y productos de higiene de esta semana
             container.innerHTML = displayItems.map((item) => {
                 const itemIndex = MORQUIS_CATALOG.indexOf(item);
                 const qty = userCart[itemIndex] || 0;
-                const formattedPrice = '$' + item.cost_price.toLocaleString('es-AR');
+                const salePrice = getSalePrice(item.cost_price);
+                const formattedPrice = '$' + salePrice.toLocaleString('es-AR');
 
                 return `
                     <div class="product-item">
@@ -1061,7 +1066,8 @@ Estamos coordinando el pedido de alimentos y productos de higiene de esta semana
             for (const idx in userCart) {
                 if (userCart[idx] > 0) {
                     const item = MORQUIS_CATALOG[idx];
-                    const subtotal = userCart[idx] * item.cost_price;
+                    const salePrice = getSalePrice(item.cost_price);
+                    const subtotal = userCart[idx] * salePrice;
                     total += subtotal;
 
                     lines.push(`
@@ -1097,10 +1103,11 @@ Estamos coordinando el pedido de alimentos y productos de higiene de esta semana
             const items = [];
             for (const idx in userCart) {
                 if (userCart[idx] > 0) {
+                    const salePrice = getSalePrice(MORQUIS_CATALOG[idx].cost_price);
                     items.push({
                         name: MORQUIS_CATALOG[idx].name,
                         qty: userCart[idx],
-                        price: MORQUIS_CATALOG[idx].cost_price
+                        price: salePrice
                     });
                 }
             }
